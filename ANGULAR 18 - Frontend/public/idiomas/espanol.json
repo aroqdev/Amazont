@@ -1,0 +1,299 @@
+{
+  "main-produc":{
+    "Nuestros productos destacados" : "Nuestros productos destacados",
+    "Ofertas y novedades": "Ofertas y novedades"
+  },
+
+  "register":{
+    "Bienvenido": "Bienvenido a Amazont",
+    "REGISTRATE":"REGISTRATE",
+
+    "form":{
+      "placeholder_name":"Nombre",
+      "placeholder_email":"Email",
+      "placeholder_password":"Contraseña",
+      "placeholder_password2":"Repetir contraseña",
+      "required_name":"El nombre es obligatorio",
+      "nameTooLarge":"El nombre es demasiado largo",
+      "email_required": "El correo es obligatorio",
+      "email_exists": "El correo ya está registrado",
+      "email_invalid": "El correo no es válido",
+      "email_available": "El correo está disponible",
+      "passwordTooLarge":"La contraseña es demasiado larga",
+      "passwordsDontMatch":"Las contraseñas no coinciden",
+      "password_required": "La contraseña es obligatoria",
+      "password_weak": "La contraseña no es fuerte",
+      "password_invalid": "La contraseña no es válida",
+      "password_strong": "La contraseña es fuerte",
+      "select_role": "--Elije un rol--",
+      "role_client": "Cliente",
+      "role_seller": "Vendedor",
+      "select_role_required": "Por favor, elija un rol",
+      "passwords_match": "Las contraseñas coinciden",
+      "passwords_not_match": "Las contraseñas NO coinciden",
+      "accept_terms": "Acepto los términos y condiciones",
+      "register": "Registrarme",
+      "have_account": "Ya tengo una cuenta"
+    }
+  },
+
+  "login": {
+    "title": "INICIO DE SESIÓN",
+    "email_placeholder": "Correo Electrónico",
+    "email_required": "El correo es obligatorio",
+    "email_not_registered": "El correo no está registrado",
+    "email_invalid": "El correo no es válido",
+    "password_placeholder": "Contraseña",
+    "password_required": "La contraseña es obligatoria",
+    "forgot_password": "He olvidado mi contraseña",
+    "login_button": "Iniciar sesión",
+    "new_here": "¿ERES NUEVO?",
+    "create_account": "Crea una cuenta"
+  },
+
+  "password_recovery": {
+    "TITLE": "Recuperar Contraseña",
+    "NEW_PASSWORD": "Nueva contraseña",
+    "REPEAT_PASSWORD": "Repetir nueva contraseña",
+    "PASSWORD_REQUIRED": "La contraseña es obligatoria",
+    "PASSWORD_INVALID": "La contraseña no es válida",
+    "PASSWORD_STRONG": "La contraseña es fuerte",
+    "PASSWORD_MATCH": "Las contraseñas coinciden",
+    "PASSWORD_NOT_MATCH": "Las contraseñas no coinciden",
+    "CHANGE_PASSWORD": "Cambiar contraseña"
+  },
+
+  "addCard": {
+    "TITLE": "DATOS DEL MÉTODO DE PAGO",
+      "form": {
+        "name_label": "Nombre del titular",
+        "name_required": "El NOMBRE es obligatorio",
+        "name_too_long": "El NOMBRE es demasiado largo",
+        "card_number_label": "Número de la tarjeta (Mínimo 16 dígitos)",
+        "card_number_required": "El NÚMERO es obligatorio",
+        "card_number_too_long": "El NÚMERO es demasiado largo",
+        "expiry_label": "Caducidad",
+        "expiry_required": "La FECHA es obligatoria",
+        "cvv_label": "Código",
+        "cvv_required": "El CÓDIGO es obligatorio",
+        "cvv_too_long": "El CÓDIGO es demasiado largo",
+        "submit_button": "Agregar"
+      }
+  },
+
+  "shopping_cart": {
+    "TITLE": "Mi cesta",
+    "PRICE": "Precio",
+    "EMPTY_CART": "No hay productos en el carrito",
+    "PRODUCT_IMAGE_ALT": "Imagen del producto {{name}}",
+    "SUBTOTAL": "Subtotal",
+    "PROCEED_PAYMENT": "Proceder al pago"
+  },
+
+  "payment": {
+    "SHIPPING_DETAILS": "Datos de envío",
+    "ORDER_SUMMARY": "Resumen del pedido",
+    "PRODUCT_IMAGE_ALT": "Imagen del producto {{name}}",
+    "form": {
+      "city_label": "Ciudad",
+      "city_required": "La CIUDAD es obligatoria",
+      "city_too_long": "La CIUDAD es demasiado larga",
+      "street_label": "Calle",
+      "street_required": "La CALLE es obligatoria",
+      "street_too_long": "La CALLE es demasiado larga",
+      "floor_label": "Piso",
+      "floor_required": "El PISO es obligatorio",
+      "floor_too_long": "El PISO es demasiado largo",
+      "door_label": "Puerta",
+      "door_required": "La PUERTA es obligatoria",
+      "door_too_long": "La PUERTA es demasiado larga",
+      "confirm": "Confirmar"
+    },
+    "PAYMENT_METHOD": "Forma de pago",
+    "CARD_PAYMENT": "Pago con Tarjeta",
+    "PAYPAL_PAYMENT": "PayPal",
+    "CARD": "Tarjeta",
+    "CARDHOLDER": "Titular",
+    "CARD_NUMBER": "Número de tarjeta",
+    "EXPIRY_DATE": "Fecha de vencimiento"
+  },
+
+  "confirm":{
+    "ORDER_ON_THE_WAY": "Tu pedido está en camino",
+    "CONTINUE_SHOPPING": "Seguir comprando",
+    "MY_PURCHASES": "Mis compras"
+  },
+
+  "add_product": {
+    "add_product": "Agregar producto",
+    "product_name": "Nombre del producto",
+    "name_required": "El nombre del producto es obligatorio",
+    "name_too_long": "El nombre del producto es demasiado largo",
+    "offer": "Está en oferta",
+    "product_image": "Imagen del producto (URL)",
+    "image_required": "La imagen es obligatoria",
+    "description": "Descripción",
+    "description_required": "La descripción es obligatoria",
+    "price": "Precio",
+    "price_required": "El precio es obligatorio",
+    "old_price": "Precio anterior",
+    "stock": "Stock",
+    "stock_required": "El stock es obligatorio",
+    "category": "Categoría",
+    "select": "Selecciona una categoría",
+    "category_required": "La categoría es obligatoria"
+  },
+
+  "my_product":{
+    "MY_PRODUCTS": "Mis productos",
+    "add_product": "Agregar producto",
+    "VIEW_SALES": "Ver ventas",
+    "CANCEL": "Cancelar",
+    "TOTAL_EARNINGS": "Total ganado",
+    "PRODUCTS_PURCHASED": "Número de productos comprados",
+    "NO_PRODUCTS": "No hay productos publicados",
+    "EDIT": "Editar",
+    "DELETE": "Eliminar",
+    "category": "Categoría",
+    "product_name": "Nombre del producto",
+    "price": "Precio",
+    "old_price": "Precio anterior",
+    "stock": "Stock"
+  },
+
+  "my_product_upd":{
+    "updateProduct":"Actualizar producto: ",
+    "prodName":"Nombre del producto",
+    "nameTooLarge":"El NOMBRE es demasiado largo",
+    "prodOffer":"¿Está en oferta?",
+    "prodImg":"Imagen del producto (URL)",
+    "prodDesc":"Descripción",
+    "prodPrice":"Precio",
+    "oldPrice":"Precio anterior",
+    "stock":"Cantidad disponible",
+    "category":"Categoría",
+    "select":"- Seleccionar"
+  },
+
+  "my_sell":{
+    "MY_SELLS": "Mis ventas",
+    "CANCEL": "Cancelar",
+    "TOTAL_EARNINGS": "Total ganado",
+    "PRODUCTS_SOLD": "Número de productos vendidos",
+    "SALES_HISTORY": "Historial de ventas",
+    "PURCHASE_NUMBER": "Número de compra",
+    "PRODUCT": "Producto",
+    "UNIT_PRICE": "Precio unitario (€)",
+    "QUANTITY": "Cantidad",
+    "TOTAL": "Total (€)",
+    "NO_PURCHASES": "No hay compras realizadas"
+  },
+
+  "profile":{
+    "CLIENT_PROFILE_IMAGE_ALT": "Fotografía de perfil del cliente",
+    "ADMIN_PROFILE_IMAGE_ALT": "Fotografía de perfil del administrador",
+    "LOGOUT": "Cerrar sesión",
+    "PROFILE": "Perfil",
+    "PRODUCT_HISTORY": "Historial de productos",
+    "MY_PAYMENT_METHODS": "Mis métodos de pago"
+  },
+
+  "user_record":{
+    "TITLE": "Historial de compras",
+    "NO_PURCHASES": "No hay compras realizadas",
+    "TOTAL_SPENT": "TOTAL GASTADO",
+    "PRODUCT_IMAGE_ALT": "Imagen del producto",
+    "UNIT_PRICE": "Precio unitario",
+    "UNITS": "Unidades",
+    "TOTAL": "Total",
+    "CANCEL": "Cancelar",
+    "UPDATE": "Actualizar",
+    "MY_PRODUCTS": "Mis productos"
+  },
+
+  "user_products":{
+    "PASSWORD": "Contraseña",
+    "PASSWORD_CHANGE_INFO": "Aquí puedes cambiar la contraseña de tu cuenta",
+    "CURRENT_PASSWORD": "Contraseña actual",
+    "NEW_PASSWORD": "Nueva contraseña",
+    "CONFIRM_NEW_PASSWORD": "Confirmar nueva contraseña",
+    "PASSWORD_REQUIRED": "La contraseña es obligatoria",
+    "PASSWORD_WEAK": "La contraseña no es fuerte",
+    "PASSWORD_INVALID": "La contraseña no es válida",
+    "PASSWORD_STRONG": "La contraseña es fuerte",
+    "PASSWORD_MATCH": "Las contraseñas coinciden",
+    "PASSWORD_NOT_MATCH": "Las contraseñas no coinciden",
+    "CANCEL": "Cancelar",
+    "UPDATE": "Actualizar"
+  },
+
+  "user_pay_method":{
+    "SAVED_PAYMENT_METHODS": "Métodos de pago guardados",
+    "MY_CARDS": "Mis tarjetas",
+    "NO_PAYMENT_METHODS": "No hay métodos de pago registrados",
+    "CARDHOLDER": "Titular",
+    "CARD_NUMBER": "Número de tarjeta",
+    "EXPIRY_DATE": "Fecha de vencimiento",
+    "CANCEL": "Cancelar",
+    "UPDATE": "Actualizar"
+  },
+
+  "categorias_prod":{
+    "VIEW_CATEGORIES": "Ver categorías"
+  },
+
+  "categorias_prod_info": {
+    "provider": "PROVEEDOR:",
+    "status": "Estado",
+    "available": "Disponible",
+    "not_available": "NO Disponible",
+    "on_sale": "PRODUCTO EN OFERTA",
+    "previous_price": "Precio Anterior",
+    "now": "¡AHORA!",
+    "shipment": "Envío",
+    "refund": "Devolución",
+    "free": "Gratis",
+    "add_to_cart": "Añadir al carrito",
+    "reviews": "Opiniones",
+    "opinions": "Opiniones",
+    "ratings": "Valoraciones",
+    "add_opinion": "Agregar opinión",
+    "add_rating": "Agregar valoración",
+    "main_image": "Imagen principal del producto",
+    "secondary_image": "Imagen secundaria del producto",
+    "createOpinion": "Crear opinion",
+    "create": "Crear",
+    "cancel": "Cancelar",
+    "update": "Actualizar",
+    "reviewRequired":"El comentario es obligatorio",
+    "reviewTooLong":"El comentario es demasiado largo",
+    "noReview":"No hay opiniones para este producto",
+    "noRating":"No hay valoraciones para este producto",
+    "ratingRequired":"La valoracion es obligatoria",
+    "opinionTitle":"Opinion",
+    "user":"Usuario",
+    "coment":"Comentario",
+    "updOpinion":"Actualizar opinion",
+    "delOpinion":"Eliminar opinion",
+    "score":"Puntuación",
+    "updRating":"Actualizar opinion",
+    "delRating":"Eliminar opinion",
+    "error": "¡ERROR! AL BUSCAR EL PRODUCTO"
+  },
+
+  "prod-list":{
+    "PRODUCTS": "Productos",
+    "SEARCH_BY_CATEGORY": "Buscar por categoría:",
+    "SELECT": "Seleccionar",
+    "MIN_PRICE": "Precio mínimo:",
+    "MAX_PRICE": "Precio máximo:",
+    "CLEAR_FILTER": "Limpiar filtros"
+  },
+
+  "main_content":{
+    "category": "Categorías",
+    "sellings": "Ventas"
+  }
+
+
+}

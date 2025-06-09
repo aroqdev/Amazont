@@ -1,0 +1,304 @@
+{
+  "main-produc":{
+    "Nuestros productos destacados" : "Featured products",
+    "Ofertas y novedades": "Offers and news"
+  },
+
+  "register":{
+    "Bienvenido": "Welcome to Amazont",
+    "REGISTRATE":"SIGN UP",
+    "form":{
+      "placeholder_name":"Name",
+      "placeholder_email":"Email",
+      "placeholder_password":"Password",
+      "placeholder_password2":"Repeat password",
+
+      "required_name":"Name is required",
+      "nameTooLarge":"Name is too long",
+      "email_required": "The email is required",
+      "email_exists": "The email is already registered",
+      "email_invalid": "The email is not valid",
+      "email_available": "The email is available",
+      "password_required": "The password is required",
+      "password_weak": "The password is not strong",
+      "password_invalid": "The password is not valid",
+      "password_strong": "The password is strong",
+      "select_role": "--Choose a role--",
+      "role_client": "Client",
+      "role_seller": "Seller",
+      "select_role_required": "Please choose a role",
+      "passwords_match": "Passwords match",
+      "passwords_not_match": "Passwords do NOT match",
+      "accept_terms": "I accept the terms and conditions",
+      "register": "Sign Up",
+      "have_account": "Already have an account"
+    }
+  },
+
+  "login": {
+    "title": "LOGIN",
+    "email_placeholder": "Email Address",
+    "email_required": "Email is required",
+    "email_not_registered": "Email is not registered",
+    "email_invalid": "Email is not valid",
+    "password_placeholder": "Password",
+    "password_required": "Password is required",
+    "forgot_password": "Forgot my password",
+    "login_button": "Login",
+    "new_here": "NEW HERE?",
+    "create_account": "Create an account"
+  },
+
+  "recover-pwd": {
+    "title": "Recover Password",
+    "email_label": "Email",
+    "email_placeholder": "Enter your email",
+    "email_required": "Email is required",
+    "email_not_registered": "Email is not registered",
+    "email_invalid": "Email is not valid",
+    "email_too_long": "Email is too long",
+    "send_code": "Send code",
+    "code_label": "Recovery code",
+    "code_placeholder": "Enter the 5-digit verification code",
+    "verify_code": "Verify code",
+    "new_password": "New password",
+    "password_placeholder": "Enter your new password",
+    "change_password": "Change password",
+    "success_title": "Password Recovered",
+    "success_message": "Your password has been successfully changed",
+    "login_button": "Login"
+  },
+
+  "addCard": {
+    "TITLE": "PAYMENT METHOD DETAILS",
+      "form": {
+        "name_label": "Cardholder Name",
+        "name_required": "The NAME is required",
+        "name_too_long": "The NAME is too long",
+        "card_number_label": "Card Number (Minimum 16 digits)",
+        "card_number_required": "The NUMBER is required",
+        "card_number_too_long": "The NUMBER is too long",
+        "expiry_label": "Expiration Date",
+        "expiry_required": "The DATE is required",
+        "cvv_label": "Security Code",
+        "cvv_required": "The CODE is required",
+        "cvv_too_long": "The CODE is too long",
+        "submit_button": "Add"
+      }
+  },
+
+  "shopping_cart": {
+    "TITLE": "My Basket",
+    "PRICE": "Price",
+    "EMPTY_CART": "No products in the cart",
+    "PRODUCT_IMAGE_ALT": "Product image of {{name}}",
+    "SUBTOTAL": "Subtotal",
+    "PROCEED_PAYMENT": "Proceed to payment"
+  },
+
+  "payment": {
+    "SHIPPING_DETAILS": "Shipping Details",
+    "ORDER_SUMMARY": "Order Summary",
+    "PRODUCT_IMAGE_ALT": "image of the product",
+    "form": {
+      "city_label": "City",
+      "city_required": "The city is required",
+      "city_too_long": "The city name is too long",
+      "street_label": "Street",
+      "street_required": "Street is required",
+      "street_too_long": "The STREET is too long",
+      "floor_label": "Floor",
+      "floor_required": "The FLOOR is required",
+      "floor_too_long": "The FLOOR is too long",
+      "door_label": "Door",
+      "door_required": "The DOOR is required",
+      "door_too_long": "The DOOR is too long",
+      "confirm": "Confirm"
+    },
+    "PAYMENT_METHOD": "Payment Method",
+    "CARD_PAYMENT": "Card Payment",
+    "PAYPAL_PAYMENT": "PayPal",
+    "CARD": "Card",
+    "CARDHOLDER": "Cardholder",
+    "CARD_NUMBER": "Card Number",
+    "EXPIRY_DATE": "Expiration Date"
+  },
+
+  "confirm":{
+    "ORDER_ON_THE_WAY": "Your order is on the way",
+    "CONTINUE_SHOPPING": "Continue shopping",
+    "MY_PURCHASES": "My purchases"
+  },
+
+  "add_product":{
+    "add_product": "Add Product",
+    "product_name": "Product Name",
+    "name_required": "The product name is required",
+    "name_too_long": "The product name is too long",
+    "offer": "Is in offer",
+    "product_image":" Product Image(URL)",
+    "image_required": "The image is required",
+    "description": "Description",
+    "description_required": "The description is required",
+    "price": "Price",
+    "price_required": "The price is required",
+    "old_price": "Old Price",
+    "stock": "Stock",
+    "stock_required": "The stock is required",
+    "category": "Category",
+    "select": "Select a category",
+    "category_required": "The category is required"
+  },
+
+  "my_product":{
+    "MY_PRODUCTS": "My Products",
+    "add_product": "Add Product",
+    "VIEW_SALES": "View Sales",
+    "CANCEL": "Cancel",
+    "TOTAL_EARNINGS": "Total Earnings",
+    "PRODUCTS_PURCHASED": "Number of Products Purchased",
+    "NO_PRODUCTS": "No products published",
+    "EDIT": "Edit",
+    "DELETE": "Delete",
+    "category": "Category",
+    "product_name": "Product Name",
+    "price": "Price",
+    "old_price": "Old Price",
+    "stock": "Stock"
+  },
+
+  "my_product_upd": {
+    "updateProduct": "Update product: ",
+    "prodName": "Product name",
+    "nameTooLarge": "The NAME is too long",
+    "prodOffer": "Is it on sale?",
+    "prodImg": "Product image (URL)",
+    "prodDesc": "Description",
+    "prodPrice": "Price",
+    "oldPrice": "Previous price",
+    "stock": "Available quantity",
+    "category": "Category",
+    "select": "- Select"
+  },
+
+  "my_sell":{
+    "MY_SELLS": "My Sales",
+    "CANCEL": "Cancel",
+    "TOTAL_EARNINGS": "Total Earnings",
+    "PRODUCTS_SOLD": "Number of Products Sold",
+    "SALES_HISTORY": "Sales History",
+    "PURCHASE_NUMBER": "Purchase Number",
+    "PRODUCT": "Product",
+    "UNIT_PRICE": "Unit Price (€)",
+    "QUANTITY": "Quantity",
+    "TOTAL": "Total (€)",
+    "NO_PURCHASES": "No purchases made"
+  },
+
+  "profile":{
+    "CLIENT_PROFILE_IMAGE_ALT": "Client profile picture",
+    "ADMIN_PROFILE_IMAGE_ALT": "Admin profile picture",
+    "LOGOUT": "Logout",
+    "PROFILE": "Profile",
+    "PRODUCT_HISTORY": "Product History",
+    "MY_PAYMENT_METHODS": "My Payment Methods"
+  },
+
+  "user_record": {
+    "TITLE": "Purchase History",
+    "NO_PURCHASES": "No purchases made",
+    "TOTAL_SPENT": "TOTAL SPENT",
+    "PRODUCT_IMAGE_ALT": "Product image",
+    "UNIT_PRICE": "Unit Price",
+    "UNITS": "Units",
+    "TOTAL": "Total",
+    "CANCEL": "Cancel",
+    "UPDATE": "Update",
+    "MY_PRODUCTS": "My Products"
+  },
+
+  "user_products": {
+    "PASSWORD": "Password",
+    "PASSWORD_CHANGE_INFO": "Here you can change your account password",
+    "CURRENT_PASSWORD": "Current password",
+    "NEW_PASSWORD": "New password",
+    "CONFIRM_NEW_PASSWORD": "Confirm new password",
+    "PASSWORD_REQUIRED": "The password is required",
+    "PASSWORD_WEAK": "The password is not strong",
+    "PASSWORD_INVALID": "The password is invalid",
+    "PASSWORD_STRONG": "The password is strong",
+    "PASSWORD_MATCH": "The passwords match",
+    "PASSWORD_NOT_MATCH": "The passwords do not match",
+    "CANCEL": "Cancel",
+    "UPDATE": "Update"
+  },
+
+  "user_pay_method":{
+    "SAVED_PAYMENT_METHODS": "Saved Payment Methods",
+    "MY_CARDS": "My Cards",
+    "NO_PAYMENT_METHODS": "No payment methods registered",
+    "CARDHOLDER": "Cardholder",
+    "CARD_NUMBER": "Card Number",
+    "EXPIRY_DATE": "Expiration Date",
+    "CANCEL": "Cancel",
+    "UPDATE": "Update"
+  },
+
+  "categorias_prod":{
+    "VIEW_CATEGORIES": "View Categories"
+  },
+
+  "categorias_prod_info": {
+  "provider": "PROVIDER:",
+  "status": "Status",
+  "available": "Available",
+  "not_available": "NOT Available",
+  "on_sale": "PRODUCT ON SALE",
+  "previous_price": "Previous Price",
+  "now": "NOW!",
+  "shipment": "Shipping",
+  "refund": "Refund",
+  "free": "Free",
+  "add_to_cart": "Add to cart",
+  "reviews": "Reviews",
+  "opinions": "Opinions",
+  "ratings": "Ratings",
+  "add_opinion": "Add opinion",
+  "add_rating": "Add rating",
+  "main_image": "Main product image",
+  "secondary_image": "Secondary product image",
+  "createOpinion": "Create opinion",
+  "create": "Create",
+  "cancel": "Cancel",
+  "update": "Update",
+  "reviewRequired": "The review is required",
+  "reviewTooLong": "The review is too long",
+  "noReview": "There are no reviews for this product",
+  "noRating":"There are no rating for this product",
+  "ratingRequired": "The rating is required",
+  "opinionTitle": "Opinion",
+  "user": "User",
+  "coment": "Comment",
+  "updOpinion": "Update opinion",
+  "delOpinion": "Delete opinion",
+  "score": "Score",
+  "updRating": "Update opinion",
+  "delRating": "Delete opinion",
+  "error": "ERROR! COULD NOT FETCH PRODUCT"
+  },
+
+  "prod-list":{
+    "PRODUCTS": "Products",
+    "SEARCH_BY_CATEGORY": "Search by category:",
+    "SELECT": "Select",
+    "MIN_PRICE": "Minimum price:",
+    "MAX_PRICE": "Maximum price:",
+    "CLEAR_FILTER": "Clear filters"
+  },
+
+  "main_content":{
+    "category": "Categories",
+    "sellings": "Sellings"
+  }
+
+}
