@@ -1,0 +1,48 @@
+<div>
+  <h4>{{ 'user_record.TITLE' | translate }}</h4>
+
+  <div class="datos">
+    @if (!productos || productos.length < 1) {
+      <p class="subtitle">{{ 'user_record.NO_PURCHASES' | translate }}</p>
+    } @else {
+        <div class="gastos">
+          <p class="total">{{ 'user_record.TOTAL_SPENT' | translate }}: {{total}}€</p><br><br><br>
+        </div>
+        <div class="compras">
+        @for (items of productos; track $index) {
+          <div class="compra">
+            <!--<p class="subtitle">{{ 'user_record.PURCHASE_ID' | translate }}: {{items.id}}</p>-->
+            <img src="{{ items.producto.imagen }}" alt="{{ 'user_record.PRODUCT_IMAGE_ALT' | translate }}">
+            <div class="datosCompra">
+              <h3 class="subtitle">{{ items.producto.nombre }}</h3>
+              <div class="campo">
+                <p><strong>{{ 'user_record.UNIT_PRICE' | translate }}</strong></p>
+                <p class="subtitle">{{ items.precio_producto }} €</p>
+              </div>
+
+              <div class="campo">
+                <p><strong>{{ 'user_record.UNITS' | translate }}</strong></p>
+                <p class="subtitle">{{ items.cantidad }}</p>
+              </div>
+
+              <div class="campo">
+                <p><strong>{{ 'user_record.TOTAL' | translate }}</strong></p>
+                <p class="subtitle">{{ items.total }} €</p>
+              </div>
+            </div>
+          </div>
+        }
+        </div>
+    }
+  </div><br><br><br>
+
+  <div class="bottom">
+    <button routerLink="/profile" class="update">{{ 'user_record.CANCEL' | translate }}</button>
+    <button class="update" (click)="update()">{{ 'user_record.UPDATE' | translate }}</button>
+
+    <!--Si el usuario es vendedor se le mostrará un botón para gestionar sus productos-->
+    @if (vendedor) {
+      <button class="update" routerLink="/my_product">{{ 'user_record.MY_PRODUCTS' | translate }}</button>
+    }
+  </div>
+</div>

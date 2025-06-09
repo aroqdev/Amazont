@@ -1,0 +1,65 @@
+<div>
+  <h4>{{ 'user_products.PASSWORD' | translate }}</h4>
+  <p class="subtitle">{{ 'user_products.PASSWORD_CHANGE_INFO' | translate }}</p><br>
+
+  <form [formGroup]="cambiarContrasena">
+    <div class="datos">
+      <p class="data">{{ 'user_products.CURRENT_PASSWORD' | translate }}</p>
+      <input type="text" placeholder="🔒" id="contrasenaActual" formControlName="contrasenaActual">
+      @if (contrasenaActual.hasError('required') && contrasenaActual.touched) {
+        <p>{{ 'user_products.PASSWORD_REQUIRED' | translate }}</p>
+      }
+    </div><br>
+    <div class="datos">
+      <p class="data">{{ 'user_products.NEW_PASSWORD' | translate }}</p>
+      <input type="text" placeholder="🔒" id="contrasenaNueva" formControlName="contrasenaNueva">
+      @if (contrasenaNueva.hasError('required') && contrasenaNueva.touched) {
+        <p>{{ 'user_products.PASSWORD_REQUIRED' | translate }}</p>
+      } @else if (contrasenaNueva.hasError('contrasenaFuerte') && contrasenaNueva.touched) {
+          <p>{{ 'user_products.PASSWORD_WEAK' | translate }}</p>
+      } @else if (contrasenaNueva.hasError('maxlength') && contrasenaNueva.touched || contrasenaNueva.hasError('minlength') && contrasenaNueva.touched) {
+          <p>{{ 'user_products.PASSWORD_INVALID' | translate }}</p>
+      } @else if (contrasenaNueva.valid && contrasenaNueva.touched) {
+          <p class="valido">{{ 'user_products.PASSWORD_STRONG' | translate }}</p>
+      }
+    </div><br>
+    <div class="datos">
+      <p class="data">{{ 'user_products.CONFIRM_NEW_PASSWORD' | translate }}</p>
+      <input type="text" placeholder="🔒" id="contrasenaRepetir" formControlName="contrasenaRepetir" (keyup)="coincideContrasena()">
+      @if (contrasenaRepetir.hasError('required') && contrasenaRepetir.touched) {
+        <p>{{ 'user_products.PASSWORD_REQUIRED' | translate }}</p>
+      } @else if (contrasenaRepetir.hasError('contrasenaFuerte') && contrasenaRepetir.touched) {
+          <p>{{ 'user_products.PASSWORD_WEAK' | translate }}</p>
+      } @else if (contrasenaRepetir.hasError('maxlength') && contrasenaRepetir.touched || contrasenaRepetir.hasError('minlength') && contrasenaRepetir.touched) {
+          <p>{{ 'user_products.PASSWORD_INVALID' | translate }}</p>
+      } @else if (contrasenaRepetir.valid && contrasenaRepetir.touched) {
+          <p class="valido">{{ 'user_products.PASSWORD_STRONG' | translate }}</p>
+      }
+    </div>
+
+    @if (contrasenaNueva.valid && contrasenaNueva.touched) {
+      @if (contrasenaRepetir.valid && contrasenaRepetir.touched) {
+        @if (coincidenContrasenas) {
+          <p class="valido">{{ 'user_products.PASSWORD_MATCH' | translate }}</p>
+        } @else {
+          <p>{{ 'user_products.PASSWORD_NOT_MATCH' | translate }}</p>
+        }
+      }
+    }
+    <br>
+    @if (mensajeEstado) {
+      <p>{{ mensajeEstado }}</p>
+    }
+    <br>
+
+    <div class="bottom">
+      <button routerLink="/profile" class="update">{{ 'user_products.CANCEL' | translate }}</button>
+      @if (coincidenContrasenas) {
+      <button class="update" [disabled]="cambiarContrasena.invalid" (click)="verificarContrasena()">{{ 'user_products.UPDATE' | translate }}</button>
+      }
+      @else {
+      <button class="update" disabled>{{ 'user_products.UPDATE' | translate }}</button>
+      }
+    </div>
+  </form>
+</div>

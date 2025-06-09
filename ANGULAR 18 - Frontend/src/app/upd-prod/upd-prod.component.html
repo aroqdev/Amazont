@@ -1,0 +1,61 @@
+<!-- Import de iconos de Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<div class="body">
+  <div class="icon">
+    <i class="fa-solid fa-wrench"></i>
+    <h2 class="title">{{ 'my_product_upd.updateProduct' | translate }}{{ producto?.nombre }}</h2>
+  </div>
+
+  <form [formGroup]="update" aria-label="login form">
+    <!-- Nombre del producto -->
+    <label for="nombre" class="formInp">{{ 'my_product_upd.prodName' | translate }}</label>
+    <input type="text" id="nombre" formControlName="nombre">
+    @if (nombre.hasError('maxlength') && nombre.touched) {
+      <p>{{ 'my_product_upd.nameTooLarge' | translate }}</p>
+    }
+
+    <!-- Si está en oferta -->
+    <label for="oferta" class="formInp">{{ 'my_product_upd.prodOffer' | translate }}</label>
+    <div class="options">
+      <input type="checkbox" id="oferta" name="oferta" (click)="enOferta()">
+    </div>
+
+    <!-- Imagen del producto -->
+    <label for="imagen" class="formInp">{{ 'my_product_upd.prodImg' | translate }}</label>
+    <input type="text" id="imagen" formControlName="imagen">
+
+    <!-- Descripción del producto -->
+    <label for="descripcion" class="formInp">{{ 'my_product_upd.prodDesc' | translate }}</label>
+    <input type="text" id="descripcion" formControlName="descripcion">
+
+    <!-- Precio actual -->
+    <label for="precio" class="formInp">{{ 'my_product_upd.prodPrice' | translate }}</label>
+    <input type="number" id="precio" formControlName="precio">
+
+    @if (oferta === true) {
+      <label for="precioAnte" class="formInp">{{ 'my_product_upd.oldPrice' | translate }}</label>
+      <input type="number" id="precioAnte" formControlName="precioAnte">
+    }
+
+    <!-- Cantidad disponible -->
+    <label for="cantidad" class="formInp">{{ 'my_product_upd.stock' | translate }}</label>
+    <input type="number" id="cantidad" formControlName="cantidad">
+
+    <!-- Categoría (selección) -->
+    <label for="categoria" class="formInp">{{ 'my_product_upd.category' | translate }}</label><br>
+    <select id="categoria" formControlName="categoria">
+        <option value="" disabled selected>{{ 'my_product_upd.select' | translate }}</option>
+      @for (item of categorias; track $index) {
+        <option [value]="item.id">{{ item.nombre }}</option>
+      }
+    </select>
+
+    <input type="button" value="Actualizar" class="addButton" [disabled]="update.invalid" (click)="actualizar()">
+
+    <br>
+    @if (mensajeEstado) {
+      <p>{{ mensajeEstado }}</p>
+    }
+  </form>
+</div>

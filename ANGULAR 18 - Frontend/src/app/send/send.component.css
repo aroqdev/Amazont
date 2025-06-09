@@ -1,0 +1,42 @@
+p{
+  color: red;
+  font-size: 15px;
+  text-align: center;
+}
+
+.valido{
+  color: green;
+  font-size: 15px;
+}
+
+.icon{
+  justify-self: center;
+}
+
+i{
+  font-size: 60px; /* Ajusta el tamaño del icono */
+  color: #f7b733;
+}
+
+.body{
+  justify-self: center;
+  background-color: rgba(177, 177, 177, 0.236);
+  width: 45%;
+  height: 50vh;
+  text-align: center;
+  border-radius: 7px;
+}
+
+button{
+  margin-top: 15vh;
+  margin-left: 20px;
+  background-color: #f7b733;
+  border-radius: 5px;
+  height: 7vh;
+  border-color: black;
+  text-align: center;
+}
+
+h2{
+  margin-top: 10px;
+}

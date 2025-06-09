@@ -1,0 +1,31 @@
+<h2>{{ 'prod-list.PRODUCTS' | translate }}</h2>
+<div class="filtros">
+  <label for="categoria">{{ 'prod-list.SEARCH_BY_CATEGORY' | translate }}</label>
+  <select id="categoria" [(ngModel)]="filtroCategoria" aria-label="search_category">
+    <option [value]="null" disabled selected>- {{ 'prod-list.SELECT' | translate }}</option>
+    @for (item of categorias; track $index) {
+      <option [value]="item.id">{{ item.nombre }}</option>
+    }
+  </select>
+  <label for="precioMin">{{ 'prod-list.MIN_PRICE' | translate }}</label>
+  <input type="number" id="precioMin" placeholder="{{ 'prod-list.MIN_PRICE' | translate }}" [(ngModel)]="filtroPrecioMin" aria-label="search_min_price">
+  <label for="precioMax">{{ 'prod-list.MAX_PRICE' | translate }}</label>
+  <input type="number" id="precioMax" placeholder="{{ 'prod-list.MAX_PRICE' | translate }}" [(ngModel)]="filtroPrecioMax" aria-label="search_max_price">
+  <button (click)="limpiarFiltros()" class="clear" aria-label="clear_filter_button">{{ 'prod-list.CLEAR_FILTER' | translate }}</button>
+</div>
+<div class="listaProductos" role="list">
+  <div *ngFor="let item of productosFiltrados; let i = index" class="card" role="listitem">
+    <img [src]="item.imagen" alt="{{ item.nombre }}">
+    <div class="container">
+      <h3 [routerLink]="item.nombre" tabindex="0" aria-label="product_name">{{ item.nombre }}</h3>
+      <div class="lowContnt">
+        <div class="desc">
+          <p aria-label="product_description">{{ item.descripcion }}</p>
+        </div>
+        <div class="precio">
+          <p class="price" aria-label="product_price"><b>{{ item.precio }}€</b></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

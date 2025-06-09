@@ -1,0 +1,120 @@
+<!-- Import de iconos de Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<br>
+<div class="todo">
+  <div class="body">
+    <i class="fa-solid fa-box"></i>
+    <h2 class="title">{{ 'payment.SHIPPING_DETAILS' | translate }}</h2>
+
+    @if (!user.adress) {
+      <form [formGroup]="direccion" aria-label="login form">
+        <label for="city" class="label">{{ 'payment.form.city_label' | translate }}</label>
+        <input type="text" id="ciudad" formControlName="ciudad"><br>
+        @if (ciudad.hasError('required') && ciudad.touched) {
+          <p>{{ 'payment.form.city_required' | translate }}</p>
+        } @else if (ciudad.hasError('maxlength') && ciudad.touched) {
+          <p>{{ 'payment.form.city_too_long' | translate }}</p>
+        }
+
+        <label for="street" class="label">{{ 'payment.form.street_label' | translate }}</label>
+        <input type="text" id="calle" formControlName="calle"><br>
+        @if (calle.hasError('required') && calle.touched) {
+          <p>{{ 'payment.form.street_required' | translate }}</p>
+        } @else if (calle.hasError('maxlength') && calle.touched) {
+          <p>{{ 'payment.form.street_too_long' | translate }}</p>
+        }
+
+        <label for="floor" class="label">{{ 'payment.form.floor_label' | translate }}</label>
+        <input type="text" id="piso" formControlName="piso"><br>
+        @if (piso.hasError('required') && piso.touched) {
+          <p>{{ 'payment.form.floor_required' | translate }}</p>
+        } @else if (piso.hasError('maxlength') && piso.touched) {
+          <p>{{ 'payment.form.floor_too_long' | translate }}</p>
+        }
+
+        <label for="door" class="label">{{ 'payment.form.door_label' | translate }}</label>
+        <input type="text" id="puerta" formControlName="puerta"><br>
+        @if (puerta.hasError('required') && puerta.touched) {
+          <p>{{ 'payment.form.door_required' | translate }}</p>
+        } @else if (puerta.hasError('maxlength') && puerta.touched) {
+          <p>{{ 'payment.form.door_too_long' | translate }}</p>
+        }
+      </form>
+    }
+    @else {
+      <label for="city" class="label">{{ user.adress }}</label>
+    }
+
+    @if (!user.nombre_titular) {
+      <div class="payments">
+        <div class="subtitle">
+          <i class="fa-solid fa-credit-card"></i><h4>{{ 'payment.PAYMENT_METHOD' | translate }}</h4><br><br>
+        </div>
+        <div class="card">
+          <p>{{ 'payment.CARD_PAYMENT' | translate }}</p>
+          <div class="image">
+            <button class="add" routerLink="/shopping_cart/addCard"><i class="fa-solid fa-plus"></i></button>
+          </div>
+        </div>
+        <div class="card">
+          <p>{{ 'payment.PAYPAL_PAYMENT' | translate }}</p>
+          <div class="image">
+            <button class="add" routerLink="/shopping_cart/addCard"><i class="fa-solid fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+    }
+    @else {
+      <div class="payments">
+        <div class="subtitle">
+          <i class="fa-solid fa-credit-card"></i><h4>{{ 'payment.PAYMENT_METHOD' | translate }}</h4><br>
+        </div><br><br>
+        <div class="card">
+          <div class="card_div">
+            <strong>{{ 'payment.CARD' | translate }}</strong>
+            <i class="fa-brands fa-cc-visa image"></i>
+          </div>
+          <div class="card_div">
+            <strong>{{ 'payment.CARDHOLDER' | translate }}</strong>
+            <p>{{user.nombre_titular}}</p>
+          </div>
+          <div class="card_div">
+            <strong>{{ 'payment.CARD_NUMBER' | translate }}</strong>
+            <p>***{{ getUltimosDigitos(user.numero_tarjeta) }}</p>
+          </div>
+          <div class="card_div">
+            <strong>{{ 'payment.EXPIRY_DATE' | translate }}</strong>
+            <p> {{ user.fecha_vencimiento }}</p>
+          </div>
+          <button class="add" routerLink="/shopping_cart/addCard"><i class="fa-solid fa-plus"></i></button>
+        </div>
+      </div>
+      <hr>
+
+    @if (!user.adress) {
+      <button [disabled]="direccion.invalid" class="send" (click)="confirmar()" routerLink="/confirm">{{ 'payment.form.confirm' | translate }}</button>
+    } @else {
+    <button class="send" (click)="confirmar()" routerLink="/confirm">{{ 'payment.form.confirm' | translate }}</button>
+    }
+    }
+  </div>
+
+  <div class="details">
+    <h3>{{ 'payment.ORDER_SUMMARY' | translate }}</h3>
+    <hr>
+    <!--Bucle que muestra todos los productos de el carrito-->
+    @for (item of carrito; track $index) {
+      <div class="prod" role="listitem">
+        <img src="{{item.producto.imagen}}" alt="imagen del producto {{item.nombre}}" [ngClass]="{'producto' : 'producto1'}" aria-label="product_image">
+        <div class="content">
+        <h3 aria-label="product_name">{{item.producto.nombre}}</h3>
+          <p aria-label="product_description">{{item.producto.descripcion}}</p>
+          <div [ngClass] = "{'precios' : 'precio1'}">
+            <p [ngClass]="{'precio': 'price1'}" aria-label="product_price">{{item.total}}€</p><i (click)="eliminar(item.id)" class="fa-solid fa-trash trash" type="button"></i>
+          </div>
+        </div>
+      </div>
+      }
+  </div>
+</div>

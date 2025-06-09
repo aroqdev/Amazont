@@ -1,0 +1,30 @@
+<!-- Import de iconos de Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<div class="main">
+  <p> </p>
+</div>
+
+@if (user.rol === 'Cliente') {
+  <img src="https://i.redd.it/bcyq3rjk2w071.png" alt="{{ 'profile.CLIENT_PROFILE_IMAGE_ALT' | translate }}" class="perfil">
+} @else {
+  <img src="https://www.cefaformacion.com/public/img/iconos/user-tie-solid.png" alt="{{ 'profile.ADMIN_PROFILE_IMAGE_ALT' | translate }}" class="perfil">
+}
+<div class="datos">
+  <div class="a">
+    <h2 class="data">{{ user.name }}</h2>
+    <!--<button class="update"><i class="fa-solid fa-pen-to-square"></i></button>-->
+  </div>
+  <div class="a">
+    <i class="fa-duotone fa-solid fa-envelope custom-icon"></i><p><strong>{{ user.email }}</strong></p>
+    <button (click)="logout()" class="update">{{ 'profile.LOGOUT' | translate }}</button>
+  </div>
+  <br><br><br>
+  <div class="options">
+    <button routerLink="/profile/data" class="extraOption">{{ 'profile.PROFILE' | translate }}</button>
+    <button routerLink="/profile/user_record" class="extraOption">{{ 'profile.PRODUCT_HISTORY' | translate }}</button>
+    <button routerLink="/profile/user_pay_method" class="extraOption">{{ 'profile.MY_PAYMENT_METHODS' | translate }}</button>
+  </div>
+  <router-outlet></router-outlet>
+
+</div>

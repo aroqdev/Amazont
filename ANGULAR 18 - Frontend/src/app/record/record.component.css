@@ -1,0 +1,224 @@
+/*Imports de fuentes*/
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap');
+
+/*Propiedades de todos los elementos*/
+*{
+  font-family:'Rubik';
+}
+
+p{
+  color: black;
+  font-size: 15px;
+  text-align: center;
+  width: 20%;
+  height: 1vh;
+}
+
+.valido{
+  color: green;
+  font-size: 15px;
+}
+
+div .datos{
+  display: flex;
+  flex-wrap: wrap;
+}
+/*COLUMNA IZQUIERDA DE LA PESTAÑA*/
+div.gastos{
+  background-color: #f7b733;
+  margin-left: -20px;
+  width: 35%;
+  text-align: center;
+  display: grid;
+  justify-content: center;
+  font-weight: bold;
+  border-radius: 0px 5px 5px 0px;
+}
+
+/*Texto de la pestaña izquierda*/
+.total{
+  white-space: nowrap;
+  width: 100%;
+  height: 20px;
+}
+
+/*COLUMNA DERECHA DE LA PESTAÑA*/
+div.compras{ /*Estilo de la division que contiene los ultimos pedidos*/
+  width: 63%;
+}
+
+div.compra{
+  display: flex;
+  border: 1px solid;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.compra img{
+  width: 20%;
+  margin-left: 10px;
+}
+
+div .datosCompra{
+  display: grid;
+  white-space: nowrap;
+  width: 100%;
+}
+
+div .campo{
+  display: flex;
+  height: 17px;
+}
+
+.subtitle{
+  width: 80%;
+  margin-left: 10px;
+  margin-top: 0px;
+  margin-bottom: -10px;
+  display: flex;
+}
+
+p.subtitle{
+  margin-top: 15px;
+}
+
+.bottom{
+  width: 20%;
+  display: flex;
+}
+
+.bottom:last-of-type{
+  width: 40%;
+}
+
+.update{
+  background-color: #f7b733;
+  width: 30%;
+  height: 30px;
+  border-radius: 10px;
+  margin: 7px;
+}
+
+h4{
+  margin-left: 10px;
+}
+
+input{
+  height: 3vh;
+  width: 40%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+div{
+  margin-left: 10px;
+}
+
+strong{
+  font-size: 15px;
+  width: 100%;
+}
+
+@media (max-width: 425px){
+  .data{
+    width: 160px;
+  }
+
+  .input{
+    width: 160px;
+  }
+
+  .bottom{
+    display: flex;
+  }
+
+  .update{
+    margin-top: 7vh;
+    margin-left: 0vw;
+    width: 20vw;
+  }
+}
+
+@media (max-width: 375px) {
+  *{
+    font-size: 50px;
+  }
+
+  .datos{
+    gap: 45px;
+  }
+  .data{
+    width: 590px;
+    font-size: 45px;
+    white-space: nowrap;
+  }
+
+  input{
+    width: 140vw;
+    height: 10vh;
+    margin-top: 4vh;
+    border-radius: 10px;
+    border: 1px solid black;
+  }
+
+  .bottom{
+    display: flex;
+    gap: 10px;
+  }
+
+  .update{
+    margin-top: 7vh;
+    margin-left: 0vw;
+    width: 70vw;
+    height: 10vh;
+    border-radius: 20px;
+    border: 2px solid black;
+    background-color: #f7b733;
+    border-radius: 10px;
+    margin: 7px;
+  }
+}
+
+@media (max-width: 320px){
+  *{
+    font-size: 50px;
+  }
+
+  .datos{
+    gap: 90px;
+  }
+  .data{
+    width: 590px;
+    font-size: 50px;
+    white-space: nowrap;
+  }
+
+  input{
+    width: 150vw;
+    height: 10vh;
+    margin-top: 4vh;
+    border-radius: 10px;
+    border: 1px solid black;
+  }
+
+  .bottom{
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 0vw;
+  }
+
+  .update{
+    margin-top: 7vh;
+    margin-left: 0vw;
+    width: 93vw;
+    height: 10vh;
+    border-radius: 20px;
+    border: 2px solid black;
+    background-color: #f7b733;
+    margin: 7px;
+    font-size: 55px;
+  }
+}

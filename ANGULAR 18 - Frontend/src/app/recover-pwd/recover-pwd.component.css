@@ -1,0 +1,98 @@
+/*Imports de fuentes*/
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap');
+
+/*..................*/
+
+p{
+  color: red;
+  font-size: 14px;
+}
+.valido{
+  color: green;
+  font-size: 14px;
+}
+
+*{
+  font-family:'Rubik';
+  font-weight:500;
+  margin: 0;
+  padding: 0;
+}
+
+.body{
+  justify-items: center;
+  background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmVhY2h8ZW58MHx8MHx8fDA%3D");
+  height: 88.7vh;
+}
+
+/*Estilo de la seccion de la imagen*/
+.logo{
+  text-align: center;
+  width: 100%;
+}
+
+.icon{
+  justify-items: center;
+  width: 100px;
+}
+
+.form{
+  border: 1px solid black;
+  justify-items: center;
+  background-color: rgba(255,255,255, 0.6);
+  text-align: center;
+  width: 65%;
+  height: 80%;
+  border-radius: 10px;
+  padding-bottom: 4vh;
+}
+
+.title{
+  margin-top: 15%;
+  margin-bottom: 3vh;
+  font-size: 20px;
+}
+
+/*Tags html*/
+form{
+  display: grid;
+  gap: 3vh;
+  justify-items: center;
+}
+
+label{
+  padding-top: 7%;
+  font-size: 17px;
+  opacity: 100%;
+}
+
+input{
+  border-radius: 5px;
+  padding-left: 10px;
+  background-color: #F7EDB8;
+  width: 480px;
+  height:30px;
+}
+
+button{
+  border-radius: 10px;
+  text-align: center;
+  background-color: #F7EDB8;
+  width: 300px;
+  height: 40px;
+  margin-bottom: 40px;
+  font-size: medium;
+}
+
+button:hover{
+  background-color: #e47911;
+  color: black
+}
+
+.enviar{
+  margin-top: 15px;
+}
+
+.validar{
+  margin-top: 15px;
+}

@@ -1,0 +1,104 @@
+/* === Estilos generales === */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.titulo {
+  font-size: 1.8rem;
+  margin: 20px;
+  color: #222;
+  text-align: center;
+}
+
+.lista, .listaProd, .listaProd2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.prod, .prod2 {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 16px;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.prod:hover, .prod2:hover {
+  transform: translateY(-5px);
+}
+
+.prod img, .prod2 img {
+  width: 30%;
+  height: 30%;
+  border-radius: 8px;
+  object-fit: cover;
+  max-height: 40%;
+}
+
+.offerDesc {
+  color: #666;
+  margin: 10px 0;
+  font-size: 0.95rem;
+}
+
+/* === Precios destacados === */
+.precios button, .preciosOfer button {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.precio1:hover {
+  background-color: #0056b3;
+}
+
+.precios, .preciosOfer {
+  margin-top: 10px;
+}
+
+/* === Ofertas === */
+.oferta {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.precio2 {
+  color: #e53935;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* === Responsive Design === */
+@media screen and (max-width: 1024px) {
+  .prod, .prod2 {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .prod, .prod2 {
+    width: 100%;
+  }
+
+  h4.titulo1 {
+    font-size: 1.5rem;
+    margin: 16px;
+  }
+}

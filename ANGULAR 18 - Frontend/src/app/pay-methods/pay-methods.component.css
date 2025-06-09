@@ -1,0 +1,208 @@
+/*Imports de fuentes*/
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap');
+
+/*Propiedades de todos los elementos*/
+*{
+  font-family:'Rubik';
+}
+
+div.general{
+  display: flex;
+}
+
+/*COLUMNA IZQUIERDA DE LA PESTAÑA*/
+div.gastos{
+  background-color: #f7b733;
+  margin-left: -20px;
+  width: 35%;
+  height: 100%;
+  text-align: center;
+  display: grid;
+  justify-content: center;
+  font-weight: bold;
+  border-radius: 0px 5px 5px 0px;
+}
+
+/*Texto de la pestaña izquierda*/
+.total{
+  white-space: nowrap;
+  width: 100%;
+  height: 20px;
+}
+
+/*COLUMNA DERECHA DE LA PESTAÑA*/
+div .datos{ /*Estilo de la division que contiene los ultimos pedidos*/
+  width: 63%;
+  display: grid;
+}
+
+div .datosCompra{
+  width: 100%;
+}
+
+div .campo{
+  display: flex;
+  height: 20px;
+}
+
+p{
+  color: black;
+  font-size: 15px;
+  text-align: center;
+}
+
+strong{
+  font-size: 15px;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.valido{
+  color: green;
+  font-size: 15px;
+}
+
+div .datos{
+  display: flex;
+}
+
+p{
+  width: 20%;
+  height: 1vh;
+}
+
+.subtitle{
+  width: 80%;
+  margin-left: 10px;
+  display: flex;
+}
+
+.bottom{
+  width: 20%;
+}
+
+.update{
+  background-color: #f7b733;
+  width: 30%;
+  height: 30px;
+  border-radius: 10px;
+  margin: 7px;
+}
+
+h4{
+  margin-left: 10px;
+}
+
+input{
+  height: 3vh;
+  width: 40%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+div{
+  margin-left: 10px;
+}
+
+@media (max-width: 425px){
+  .data{
+    width: 160px;
+  }
+
+  .input{
+    width: 160px;
+  }
+
+  .bottom{
+    display: flex;
+  }
+
+  .update{
+    margin-top: 7vh;
+    margin-left: 0vw;
+    width: 20vw;
+  }
+}
+
+@media (max-width: 375px) {
+  *{
+    font-size: 50px;
+  }
+
+  .datos{
+    gap: 45px;
+  }
+  .data{
+    width: 590px;
+    font-size: 45px;
+    white-space: nowrap;
+  }
+
+  input{
+    width: 140vw;
+    height: 10vh;
+    margin-top: 4vh;
+    border-radius: 10px;
+    border: 1px solid black;
+  }
+
+  .bottom{
+    display: flex;
+    gap: 10px;
+  }
+
+  .update{
+    margin-top: 7vh;
+    margin-left: 0vw;
+    width: 70vw;
+    height: 10vh;
+    border-radius: 20px;
+    border: 2px solid black;
+    background-color: #f7b733;
+    border-radius: 10px;
+    margin: 7px;
+  }
+}
+
+@media (max-width: 320px){
+  *{
+    font-size: 50px;
+  }
+
+  .datos{
+    gap: 90px;
+  }
+  .data{
+    width: 590px;
+    font-size: 50px;
+    white-space: nowrap;
+  }
+
+  input{
+    width: 150vw;
+    height: 10vh;
+    margin-top: 4vh;
+    border-radius: 10px;
+    border: 1px solid black;
+  }
+
+  .bottom{
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 0vw;
+  }
+
+  .update{
+    margin-top: 7vh;
+    margin-left: 0vw;
+    width: 93vw;
+    height: 10vh;
+    border-radius: 20px;
+    border: 2px solid black;
+    background-color: #f7b733;
+    margin: 7px;
+    font-size: 55px;
+  }
+}

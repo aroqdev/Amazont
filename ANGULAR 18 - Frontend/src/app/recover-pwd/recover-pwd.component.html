@@ -1,0 +1,88 @@
+<div class="body">
+  <div class="logo">
+    <img src="assets/icon.png" alt="logo" class="icon">
+  </div>
+
+  <div class="form">
+    @if (!correoVerificado){
+      <div class="content">
+        <h3 class="title">{{ 'recover-pwd.title' | translate }}</h3>
+        <form [formGroup]="validarCorreo">
+            <label for="correo" class="campos">{{ 'recover-pwd.email_label' | translate }}</label>
+            <input type="text" class="campos" placeholder="{{ 'recover-pwd.email_placeholder' | translate }}" [(ngModel)]="correoS" id="correo" formControlName="correo">
+            @if (correo.hasError('required') && correo.touched) {
+                <p>{{ 'recover-pwd.email_required' | translate }}</p>
+            } @else if (correo.hasError('correoNoExiste') && correo.touched) {
+              <p>{{ 'recover-pwd.email_not_registered' | translate }}</p>
+            } @else if (correo.hasError('email') && correo.touched) {
+                <p>{{ 'recover-pwd.email_invalid' | translate }}</p>
+            } @else if (correo.hasError('maxlength') && correo.touched) {
+                <p>{{ 'recover-pwd.email_too_long' | translate }}</p>
+            }
+            <button [disabled]="validarCorreo.invalid" (click)="enviarCorreo()">{{ 'recover-pwd.send_code' | translate }}</button>
+        </form>
+      </div>
+    }
+    @else if (!codigoVerificado) {
+      <div class="content">
+          <h3 class="title">{{ 'recover-pwd.title' | translate }}</h3><br>
+          <label for="correo" class="campos">{{ 'recover-pwd.code_label' | translate }}</label><br><br>
+          <input type="text" class="campos" placeholder="{{ 'recover-pwd.code_placeholder' | translate }}" class="form-control" [(ngModel)]="codigo"><br>
+          <p *ngIf="mensajeError">{{ mensajeError }}</p>
+          <button (click)="verificarCodigo(codigo)" class="enviar">{{ 'recover-pwd.verify_code' | translate }}</button>
+      </div>
+    }
+    @else if (!contrasenaCambiada) {
+      <div class="content">
+        <h3 class="title">{{ 'recover-pwd.new_password_title' | translate }}</h3>
+        <form [formGroup]="validarContrasena">
+          <label for="correo" class="campos">{{ 'recover-pwd.new_password_label' | translate }}</label>
+          <input type="text" class="campos" placeholder="{{ 'recover-pwd.new_password_placeholder' | translate }}" [(ngModel)]="contrasenaS" (keyup)="coincidirContrasena()" id="contrasena" formControlName="contrasena">
+          @if (contrasena.hasError('required') && contrasena.touched) {
+            <p>{{ 'recover-pwd.password_required' | translate }}</p>
+          } @else if (contrasena.hasError('contrasenaFuerte') && contrasena.touched) {
+            <p>{{ 'recover-pwd.password_weak' | translate }}</p>
+          } @else if (contrasena.hasError('maxlength') && contrasena.touched || contrasena.hasError('minlength') && contrasena.touched) {
+            <p>{{ 'recover-pwd.password_invalid_length' | translate }}</p>
+          } @else if (contrasena.valid && contrasena.touched) {
+            <p class="valido">{{ 'recover-pwd.password_strong' | translate }}</p>
+          }
+          <label for="correo" class="campos">{{ 'recover-pwd.repeat_password_label' | translate }}</label>
+          <input type="text" placeholder="{{ 'recover-pwd.repeat_password_placeholder' | translate }}" [(ngModel)]="repetirContrasenaS" (keyup)="coincidirContrasena()" id="repetirContrasena" formControlName="repetirContrasena">
+          @if (repetirContrasena.hasError('required') && repetirContrasena.touched) {
+            <p>{{ 'recover-pwd.password_required' | translate }}</p>
+          } @else if (repetirContrasena.hasError('contrasenaFuerte') && repetirContrasena.touched) {
+            <p>{{ 'recover-pwd.password_weak' | translate }}</p>
+          } @else if (repetirContrasena.hasError('maxlength') && repetirContrasena.touched || contrasena.hasError('minlength') && contrasena.touched) {
+            <p>{{ 'recover-pwd.password_invalid_length' | translate }}</p>
+          } @else if (repetirContrasena.valid && repetirContrasena.touched) {
+            <p class="valido">{{ 'recover-pwd.password_strong' | translate }}</p>
+          }
+          @if (contrasena.valid && contrasena.touched) {
+            @if (repetirContrasena.valid && repetirContrasena.touched) {
+              @if (coincidenContrasenas) {
+                <p class="valido">{{ 'recover-pwd.passwords_match' | translate }}</p>
+              } @else {
+                <p>{{ 'recover-pwd.passwords_not_match' | translate }}</p>
+              }
+            }
+          }
+          @if (mensajeError) {
+          <p>{{ mensajeError }}</p>
+          }
+          <button [disabled]="validarContrasena.invalid" (click)="verificarContrasena()">{{ 'recover-pwd.change_password_button' | translate }}</button>
+        </form>
+      </div>
+    }
+    @else if (codigoVerificado) {
+      <div class="content">
+          <h3 class="title">{{ 'recover-pwd.success_title' | translate }}</h3>
+          <label for="correo" class="campos">{{ 'recover-pwd.success_message' | translate }}</label><br>
+          <button routerLink="/login" class="validar">{{ 'recover-pwd.login_button' | translate }}</button>
+      </div>
+    }
+  </div>
+</div>
+
+
+

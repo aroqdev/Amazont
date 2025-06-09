@@ -1,0 +1,163 @@
+@if(selectProd) {
+  <!-- Contenedor de las imágenes del producto -->
+  <div class="producto">
+    <!-- Columna de la imagen principal del producto -->
+    <div class="mainImg">
+      <img [src]="selectProd.imagen" alt="{{ 'categorias_prod_info.main_image' | translate }}" class="imgP" aria-label="main_product_image">
+    </div>
+    <!-- Columna de las imágenes secundarias -->
+    <div class="moreImg">
+      <img [src]="selectProd.imagen" alt="{{ 'categorias_prod_info.secondary_image' | translate }}" class="second" aria-label="second_product_image">
+      <img [src]="selectProd.imagen" alt="{{ 'categorias_prod_info.secondary_image' | translate }}" class="second" aria-label="second_product_image">
+      <img [src]="selectProd.imagen" alt="{{ 'categorias_prod_info.secondary_image' | translate }}" class="second" aria-label="second_product_image">
+    </div>
+    <div class="desc">
+      <div class="precio">
+        <h3 class="nombre" aria-label="product_details_name">{{ selectProd.nombre }}</h3>
+        <p class="info" aria-label="product_details_description">{{ selectProd.descripcion }}</p>
+        <p class="info" aria-label="product_details_description"><strong>{{ 'categorias_prod_info.provider' | translate }}</strong> {{ selectProd.usuario.name }}</p>
+        @if (selectProd.cantidad > 0) {
+          <p aria-label="product_details_status"><span>{{ 'categorias_prod_info.status' | translate }}:</span> {{ 'categorias_prod_info.available' | translate }}</p>
+        }
+        @else {
+          <p aria-label="product_details_status"><span>{{ 'categorias_prod_info.status' | translate }}:</span> {{ 'categorias_prod_info.not_available' | translate }}</p>
+        }
+        @if (selectProd.oferta) {
+          <p aria-label="product_details_status"><span>{{ 'categorias_prod_info.on_sale' | translate }}</span></p>
+          <p aria-label="product_details_status">{{ 'categorias_prod_info.previous_price' | translate }}: {{ selectProd.precioAnterior }}</p>
+          <h3 class="price" aria-label="product_details_price"><span>{{ 'categorias_prod_info.now' | translate }}</span> {{ selectProd.precio }}€</h3>
+        }
+        @else {
+          <h3 class="price" aria-label="product_details_price">{{ selectProd.precio }}€</h3>
+        }
+      </div>
+    </div>
+  </div>
+
+  <div class="low">
+    <div class="entrega">
+      <div class="envio">
+        <p class="data" aria-label="product_details_shipment"><b>{{ 'categorias_prod_info.shipment' | translate }}:</b> {{ 'categorias_prod_info.free' | translate }}</p>
+        <p class="data" aria-label="product_details_refund"><b>{{ 'categorias_prod_info.refund' | translate }}:</b> {{ 'categorias_prod_info.free' | translate }}</p>
+      </div>
+        <img [src]="selectProd.imagen" alt="{{ 'categorias_prod_info.secondary_image' | translate }}" class="delivery" aria-label="product_details_image"><br>
+        @if (user) {
+          @if (selectProd.cantidad > 0) {
+            <input type="number" [min]="1" [max]="selectProd.cantidad" [(ngModel)]="cantidad" step="1">
+            <button aria-label="add_to_chart" (click)="agregar(selectProd.id)">{{ 'categorias_prod_info.add_to_cart' | translate }}</button>
+            }
+        }
+        @if (mensajeEstado) {
+          <p>{{ mensajeEstado }}</p>
+        }
+    </div>
+    <div class="valoracion" role="group" aria-labelledby="opiniones-title">
+      <h3 aria-label="product_details_reviews" id="opiniones-title">{{ 'categorias_prod_info.reviews' | translate }}</h3><br>
+      <div class="content">
+        <div class="promedio">
+          <h3 class="total" aria-label="product_review_total">{{ promedio }}</h3>
+          @for (i of [].constructor(promedioEntero); track $index) {
+            &#9733; <!-- Aquí se muestra una estrella -->
+          }
+          <p>{{ opinion.length }} {{ 'categorias_prod_info.opinions' | translate }}</p>
+          <p>{{ valoracion.length }} {{ 'categorias_prod_info.ratings' | translate }}</p>
+        </div>
+        <div class="stars" role="group" aria-label="Review distribution">
+          <div class="estrella" *ngFor="let estrella of [5, 4, 3, 2, 1]">
+            <h4 class="review">{{ estrella }}&#9733;</h4>
+            <progress max="100" [value]="distribucionEstrellas[estrella]" aria-label="stars reviews percentage"></progress>
+          </div>
+        </div>
+      </div>
+      <div class="addReview">
+        @if (user) {
+          <button (click)="anadirOpinion()" aria-label="add_review">{{ 'categorias_prod_info.add_opinion' | translate }}</button>
+          <button (click)="anadirValoracion()" aria-label="add_review">{{ 'categorias_prod_info.add_rating' | translate }}</button>
+        }
+      @if (addOpinion) {
+        <p class="info" aria-label="product_details_description">{{ 'categorias_prod_info.add_opinion' | translate }}</p>
+
+        <form [formGroup]="createOpinion" aria-label="modify opinion form">
+          <input type="textArea" placeholder="Comentario" id="crearComentario" formControlName="crearComentario">
+          @if (crearComentario.hasError('required') && crearComentario.touched) {
+            <p>{{ 'categorias_prod_info.reviewRequired' | translate }}</p>
+          } @else if (crearComentario.hasError('maxLength') && crearComentario.touched) {
+            <p>{{ 'categorias_prod_info.reviewTooLong' | translate }}</p>
+          }
+          <br>
+          <button [disabled]="createOpinion.invalid" class="" (click)="agregarOpinion()" aria-label="login button">{{ 'categorias_prod_info.create' | translate }}</button>
+          <button class="" (click)="cerrarOpinion()" aria-label="login button">{{ 'categorias_prod_info.cancel' | translate }}</button>
+        </form>
+      }
+      @if (addValoracion) {
+        <p class="info" aria-label="product_details_description">{{ 'categorias_prod_info.add_rating' | translate }}</p>
+
+          <form [formGroup]="createValoracion" aria-label="modify opinion form">
+            <input type="number" min="1" max="5" id="crearPuntuacion" formControlName="crearPuntuacion">
+            @if (crearPuntuacion.hasError('required') && crearPuntuacion.touched) {
+              <p>{{ 'categorias_prod_info.ratingRequired' | translate }}</p>
+            }
+            <br>
+            <button [disabled]="createValoracion.invalid" class="" (click)="agregarValoracion()" aria-label="login button">{{ 'categorias_prod_info.create' | translate }}</button>
+            <button class="" (click)="cerrarValoracion()" aria-label="login button">{{ 'categorias_prod_info.cancel' | translate }}</button>
+          </form>
+      }
+    </div>
+  </div>
+</div>
+@if (opinion.length < 1) {
+  <p>{{ 'categorias_prod_info.noReview' | translate }}</p>
+}
+  @for (item of opinion; track $index) {
+    <h3 class="lowtittle">{{ 'categorias_prod_info.opinionTitle' | translate }}</h3>
+    <p class="lowtittle"><strong>{{ 'categorias_prod_info.user' | translate }}</strong> {{ item.usuario.name }}</p>
+    <p class="lowtittle"><strong>{{ 'categorias_prod_info.coment' | translate }}</strong> {{ item.comentario }}</p>
+    @if (item.user_id === user?.id) {
+      <button class="lowtittle" (click)="mostrarOpinion()" aria-label="delete_opinion">{{ 'categorias_prod_info.updOpinion' | translate }}</button>
+      <button (click)="eliminarOpinion(item.id)" aria-label="delete_opinion">{{ 'categorias_prod_info.delOpinion' | translate }}</button>
+      @if (actOpinion) {
+        <p class="info" aria-label="product_details_description">{{ 'categorias_prod_info.updOpinion' | translate }}</p>
+
+        <form [formGroup]="modifyOpinion" aria-label="modify opinion form">
+          <input type="textArea" placeholder="Comentario" id="comentario" formControlName="comentario">
+          @if (comentario.hasError('required') && comentario.touched) {
+            <p>{{ 'categorias_prod_info.reviewRequired' | translate }}</p>
+          } @else if (comentario.hasError('maxLength') && comentario.touched) {
+            <p>{{ 'categorias_prod_info.reviewTooLong' | translate }}</p>
+          }
+          <br>
+          <button [disabled]="modifyOpinion.invalid" class="" (click)="modificarOpinion(item.id)" aria-label="login button">{{ 'categorias_prod_info.update' | translate }}</button>
+          <button class="" (click)="ocultarOpinion()" aria-label="login button">{{ 'categorias_prod_info.cancel' | translate }}</button>
+        </form>
+      }
+    }
+
+  <h3 class="lowtittle">{{ 'categorias_prod_info.ratings' | translate }}</h3>
+  <div *ngIf="getValoracionParaOpinion(item.user_id) as valoracion" class="lowtittle">
+    <p><strong>{{ 'categorias_prod_info.score' | translate }}</strong> {{ valoracion.puntuacion }}</p>
+    @if (valoracion.user_id === user?.id) {
+      <button (click)="mostrarValoracion()" aria-label="delete_opinion">{{ 'categorias_prod_info.updRating' | translate }}</button>
+      <button (click)="eliminarValoracion(valoracion.id)" aria-label="delete_review">{{ 'categorias_prod_info.delRating' | translate }}</button>
+      @if (actValoracion) {
+        <p class="info" aria-label="product_details_description">{{ 'categorias_prod_info.updRating' | translate }}</p>
+
+          <form [formGroup]="modifyValoracion" aria-label="modify valoracion form">
+            <input type="number" min="1" max="5" id="puntuacion" formControlName="puntuacion">
+            @if (puntuacion.hasError('required') && puntuacion.touched) {
+              <p>{{ 'categorias_prod_info.ratingRequired' | translate }}</p>
+            }
+            <br>
+            <button [disabled]="modifyValoracion.invalid" class="" (click)="modificarValoracion(valoracion.id)" aria-label="login button">{{ 'categorias_prod_info.update' | translate }}</button>
+            <button class="" (click)="ocultarValoracion()" aria-label="login button">{{ 'categorias_prod_info.cancel' | translate }}</button>
+          </form>
+      }
+    }
+  </div>
+
+  <div *ngIf="!getValoracionParaOpinion(item.user_id)" class="lowtittle">
+    <p>{{ 'categorias_prod_info.noRating' | translate }}</p>
+  </div>
+}
+} @else {
+  <h1>{{ 'categorias_prod_info.error' | translate }}</h1>
+}

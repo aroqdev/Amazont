@@ -1,0 +1,96 @@
+<div class="cuerpo">
+  <div class="logo">
+    <img src="assets/icon.png" alt="logo" class="icon"><!--Logotipo de la empresa-->
+    <h2>{{'register.Bienvenido' |translate }}</h2>
+  </div>
+  <div class="container">
+    <h3>{{'register.REGISTRATE' | translate }}</h3>
+
+    <form [formGroup]="registro">
+      <input type="text" placeholder="{{'register.form.placeholder_name' | translate }}" id="nombre" formControlName="nombre">
+      @if (nombre.hasError('required') && nombre.touched) {
+        <p>{{'register.required_name' |translate }}</p>
+      } @else if (nombre.hasError('maxlength') && nombre.touched) {
+        <p>{{'register.nameTooLarge' | translate}}</p>
+      }
+      <br>
+      <br>
+      <input type="text" placeholder="{{'register.form.placeholder_email' | translate }}" id="correo" formControlName="correo">
+
+      @if (correo.hasError('required') && correo.touched) {
+        <p>{{ 'register.form.email_required' | translate }}</p>
+      } @else if (correo.hasError('correoExiste') && correo.touched) {
+        <p>{{ 'register.form.email_exists' | translate }}</p>
+      } @else if (correo.hasError('email') && correo.touched) {
+        <p>{{ 'register.form.email_invalid' | translate }}</p>
+      } @else if (correo.valid && correo.touched) {
+        <p class="valido">{{ 'register.form.email_available' | translate }}</p>
+      }
+      <br><br>
+
+      <input type="text" placeholder="{{'register.form.placeholder_password' | translate }}" id="contrasena" formControlName="contrasena" (keyup)="coincideContrasena()">
+      @if (contrasena.hasError('required') && contrasena.touched) {
+        <p>{{ 'register.form.password_required' | translate }}</p>
+      } @else if (contrasena.hasError('contrasenaFuerte') && contrasena.touched) {
+        <p>{{ 'register.form.password_weak' | translate }}</p>
+      } @else if (contrasena.hasError('maxlength') && contrasena.touched || contrasena.hasError('minlength') && contrasena.touched) {
+        <p>{{ 'register.form.password_invalid' | translate }}</p>
+      } @else if (contrasena.valid && contrasena.touched) {
+        <p class="valido">{{ 'register.form.password_strong' | translate }}</p>
+      }
+      <br>
+      <br>
+      <input type="text" placeholder="{{'register.form.placeholder_password2' | translate }}" id="repetirContrasena" formControlName="repetirContrasena" (keyup)="coincideContrasena()">
+      @if (repetirContrasena.hasError('required') && repetirContrasena.touched) {
+        <p>{{ 'register.form.password_required' | translate }}</p>
+      } @else if (repetirContrasena.hasError('contrasenaFuerte') && repetirContrasena.touched) {
+        <p>{{ 'register.form.password_weak' | translate }}</p>
+      } @else if (repetirContrasena.hasError('maxlength') && repetirContrasena.touched || repetirContrasena.hasError('minlength') && repetirContrasena.touched) {
+        <p>{{ 'register.form.password_invalid' | translate }}</p>
+      } @else if (repetirContrasena.valid && repetirContrasena.touched) {
+        <p class="valido">{{ 'register.form.password_strong' | translate }}</p>
+      }
+      <br>
+      <br>
+      <select id="roles" formControlName="rol">
+        <option value="" disabled selected>{{ 'register.form.select_role' | translate }}</option>
+        <option value="Cliente">{{ 'register.form.role_client' | translate }}</option>
+        <option value="Vendedor">{{ 'register.form.role_seller' | translate }}</option>
+      </select>
+
+      @if (rol.hasError('required') && rol.touched) {
+        <p>{{ 'register.form.select_role_required' | translate }}</p>
+      }
+      <br>
+      @if (contrasena.valid && contrasena.touched) {
+        @if (repetirContrasena.valid && repetirContrasena.touched) {
+          @if (coincidenContrasenas) {
+            <p class="valido">{{ 'register.form.passwords_match' | translate }}</p>
+          } @else {
+            <p>{{ 'register.form.passwords_not_match' | translate }}</p>
+          }
+        }
+      }
+      <br>
+
+      <!--Términos y condiciones-->
+      <div class="terminos">
+        <input type="checkbox" formControlName="terminosCondiciones">
+        <p class="texto">{{ 'register.form.accept_terms' | translate }}</p>
+      </div>
+
+      @if (mensajeEstado) {
+        <p>{{ mensajeEstado }}</p>
+      }
+      <br>
+      @if (coincidenContrasenas) {
+        <button [disabled]="registro.invalid" (click)="registerUser()">{{ 'register.form.register' | translate }}</button>
+      }
+      @else {
+        <button disabled>{{ 'register.form.register' | translate }}</button>
+      }
+    </form>
+
+    <a routerLink="/login">{{'register.form.have_account' | translate}}</a>
+  </div>
+</div>

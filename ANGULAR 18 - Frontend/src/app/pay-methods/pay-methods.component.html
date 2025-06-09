@@ -1,0 +1,32 @@
+<h4>{{ 'user_pay_method.SAVED_PAYMENT_METHODS' | translate }}</h4>
+<div class="general">
+  <div class="gastos">
+    <p class="total">{{ 'user_pay_method.MY_CARDS' | translate }}</p><br><br><br><br><br><br>
+  </div>
+  <div class="datos">
+    @if (!user.numero_tarjeta) {
+      <p class="subtitle">{{ 'user_pay_method.NO_PAYMENT_METHODS' | translate }}</p>
+    } @else {
+      <div class="datosCompra">
+        <div class="campo">
+          <p><strong>{{ 'user_pay_method.CARDHOLDER' | translate }}</strong></p>
+          <p class="subtitle">{{ user.nombre_titular }}</p>
+        </div>
+
+        <div class="campo">
+          <p><strong>{{ 'user_pay_method.CARD_NUMBER' | translate }}</strong></p>
+          <p class="subtitle">***{{ getUltimosDigitos(user.numero_tarjeta) }}</p>
+        </div>
+
+        <div class="campo">
+          <p><strong>{{ 'user_pay_method.EXPIRY_DATE' | translate }}</strong></p>
+          <p class="subtitle">{{ user.fecha_vencimiento }}</p>
+        </div>
+      </div>
+    }
+  </div>
+</div>
+<div class="bottom">
+  <button class="update" routerLink="/profile">{{ 'user_pay_method.CANCEL' | translate }}</button>
+  <button class="update" (click)="update()">{{ 'user_pay_method.UPDATE' | translate }}</button>
+</div>
