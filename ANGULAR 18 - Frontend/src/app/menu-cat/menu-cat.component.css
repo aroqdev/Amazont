@@ -1,0 +1,122 @@
+p{
+  color: red;
+  font-size: 15px;
+  text-align: center;
+}
+
+.valido{
+  color: green;
+  font-size: 15px;
+}
+
+.categorias{
+    display: flex;
+    flex-wrap: wrap;
+    width: 99.6%;
+    gap: 7px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.catBtn {
+    background-color: #f7b733;
+    text-align: center;
+    display: flex; /* Usar flexbox para alinear elementos */
+    align-items: center; /* Alinea la imagen y el texto verticalmente */
+    width: 32.2vw;
+    height: 5vh;
+    border-radius: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'Arial';
+    font-weight: bold;
+    justify-self: center;
+}
+
+.producto{
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+}
+
+@media (max-width: 425px){
+
+    /*Botones de categorias*/
+    .catBtn {
+        background-color: #f7b733;
+        text-align: center;
+        display: flex; /* Usar flexbox para alinear elementos */
+        align-items: center; /* Alinea la imagen y el texto verticalmente */
+        width: 200vw;
+        height: 10vh;
+        margin: 5px;
+        border-radius: 5px;
+        border: 1px solid black;
+        cursor: pointer;
+        font-size: 24px;
+        font-family: 'Arial';
+        font-weight: bold;
+      }
+      .producto {
+        width: 55px; /* Ajusta el tamaño de la imagen */
+        height: auto; /* Mantén la proporción de la imagen */
+        margin-right: 2vh; /* Espacio entre la imagen y el texto */
+        background-color: transparent;
+        padding: 2px;
+      }
+}
+
+@media (max-width: 375px){
+
+  /*Botones de categorias*/
+  .catBtn {
+      background-color: #f7b733;
+      text-align: center;
+      display: flex; /* Usar flexbox para alinear elementos */
+      align-items: center; /* Alinea la imagen y el texto verticalmente */
+      width: 320vw;
+      height: 15vh;
+      margin: 5px;
+      border-radius: 5px;
+      border: 1px solid black;
+      cursor: pointer;
+      font-size: 35px;
+      font-family: 'Arial';
+      font-weight: bold;
+    }
+    .producto {
+      width: 75px; /* Ajusta el tamaño de la imagen */
+      height: auto; /* Mantén la proporción de la imagen */
+      margin-right: 2vh; /* Espacio entre la imagen y el texto */
+      background-color: transparent;
+      padding: 2px;
+    }
+}
+
+@media (max-width: 320px){
+
+  /*Botones de categorias*/
+  .catBtn {
+      background-color: #f7b733;
+      text-align: center;
+      display: flex; /* Usar flexbox para alinear elementos */
+      align-items: center; /* Alinea la imagen y el texto verticalmente */
+      width: 390vw;
+      height: 15vh;
+      margin: 5px;
+      border-radius: 5px;
+      border: 1px solid black;
+      cursor: pointer;
+      font-size: 35px;
+      font-family: 'Arial';
+      font-weight: bold;
+    }
+    .producto {
+      width: 75px; /* Ajusta el tamaño de la imagen */
+      height: auto; /* Mantén la proporción de la imagen */
+      margin-right: 2vh; /* Espacio entre la imagen y el texto */
+      background-color: transparent;
+      padding: 2px;
+    }
+}

@@ -1,0 +1,164 @@
+  /*Imports de fuentes*/
+  @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap');
+
+  *{
+  font-family:'Rubik';
+  }
+
+  h4{
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .bottom2 {
+    justify-self: center;
+    display: grid;
+  }
+
+  .general {
+    display: flex;
+    height: 54.65em; /* Asegura que el contenedor principal ocupe toda la altura */
+  }
+
+  .menu-lateral-izquierda, .contenido {
+    height: 100%;
+  }
+
+  .menu-lateral-izquierda {
+    width: 20%;
+    background-color: #f7b633cb;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 0px;
+    text-align: center;
+    margin-top: 0px;
+  }
+
+  .contenido{
+    display: grid;
+    width: 80%;
+    height: 55.9em;
+    margin: 0;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+
+  .menu-superior {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -25vh;
+    gap: 10px;
+  }
+
+  .card{
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #ffc06771;
+    text-align: center;
+    font-size: 20px;
+    width: 25%;
+  }
+
+  .estadisticas {
+    font-size: 16px;
+    text-align: left;
+    margin: 10px;
+    color: black;
+  }
+
+  .card-content {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .datos {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+
+  .botones {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .gestion {
+    background-color: #f7b733;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .gestion:hover {
+    background-color: #0056b3;
+  }
+
+  .gestion2 {
+    background-color: #f7b733;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin: 5px;
+    text-align: center;
+    justify-self: center;
+  }
+
+  .fa-solid {
+    margin-right: 5px;
+  }
+
+  p{
+    color: red;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .valido{
+    color: green;
+    font-size: 15px;
+  }
+
+  table{
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th{
+    width: 20%;
+    font-size: 17px;
+    background-color: #f7b633cb;
+  }
+
+  tr:nth-child(odd) {
+    background-color: #f7b63369; /* Color para filas impares */
+  }
+
+  tr:nth-child(even) {
+    background-color: #ffffff; /* Color para filas pares */
+  }
+
+  td{
+    text-align: center;
+  }
+
+  td:last-child{
+    justify-items: center;
+  }
+
+  .bottom2{
+    justify-self: center;
+  }

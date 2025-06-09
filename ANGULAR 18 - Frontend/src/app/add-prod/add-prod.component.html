@@ -1,0 +1,73 @@
+<!-- Import de iconos de Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<div class="body">
+  <div class="icon">
+    <i class="fa-solid fa-bag-shopping"></i>
+    <h2 class="title">{{ 'add_product.add_product' | translate }}</h2>
+  </div>
+
+  <form [formGroup]="update" aria-label="login form">
+    <!-- Nombre del producto -->
+    <label for="nombre" class="formInp">{{ 'add_product.product_name' | translate }}</label>
+    <input type="text" id="nombre" formControlName="nombre">
+    @if (nombre.hasError('required') && nombre.touched) {
+      <p>{{ 'add_product.name_required' | translate }}</p>
+    } @else if (nombre.hasError('maxlength') && nombre.touched) {
+      <p>{{ 'add_product.name_too_long' | translate }}</p>
+    }
+
+    <!-- Si está en oferta -->
+    <label for="oferta" class="formInp">{{ 'add_product.offer' | translate }}</label>
+    <div class="options">
+      <input type="checkbox" id="oferta" name="oferta" (click)="enOferta()">
+    </div>
+
+    <!-- Imagen del producto -->
+    <label for="imagen" class="formInp">{{ 'add_product.product_image' | translate }}</label>
+    <input type="text" id="imagen" formControlName="imagen">
+    @if (imagen.hasError('required') && imagen.touched) {
+      <p>{{ 'add_product.image_required' | translate }}</p>
+    }
+
+    <!-- Descripción del producto -->
+    <label for="descripcion" class="formInp">{{ 'add_product.description' | translate }}</label>
+    <input type="text" id="descripcion" formControlName="descripcion">
+    @if (descripcion.hasError('required') && descripcion.touched) {
+      <p>{{ 'add_product.description_required' | translate }}</p>
+    }
+
+    <!-- Precio actual -->
+    <label for="precio" class="formInp">{{ 'add_product.price' | translate }}</label>
+    <input type="number" id="precio" formControlName="precio">
+    @if (precio.hasError('required') && precio.touched) {
+      <p>{{ 'add_product.price_required' | translate }}</p>
+    }
+
+    @if (oferta === true) {
+      <label for="precioAnte" class="formInp">{{ 'add_product.old_price' | translate }}</label>
+      <input type="number" id="precioAnte" formControlName="precioAnte">
+    }
+
+    <!-- Cantidad disponible -->
+    <label for="cantidad" class="formInp">{{ 'add_product.stock' | translate }}</label>
+    <input type="number" id="cantidad" formControlName="cantidad">
+    @if (cantidad.hasError('required') && cantidad.touched) {
+      <p>{{ 'add_product.stock_required' | translate }}</p>
+    }
+
+    <!-- Categoría (selección) -->
+    <label for="categoria" class="formInp">{{ 'add_product.category' | translate }}</label><br>
+    <select id="categoria" formControlName="categoria">
+        <option value="" disabled selected>- {{ 'add_product.select' | translate }}</option>
+      @for (item of categorias; track $index) {
+        <option [value]="item.id">{{ item.nombre }}</option>
+      }
+    </select>
+    @if (categoria.hasError('required') && categoria.touched) {
+      <p>{{ 'add_product.category_required' | translate }}</p>
+    }
+
+    <input type="button" value="{{ 'add_product.add_product' | translate }}" class="addButton" [disabled]="update.invalid" (click)="crear()">
+  </form>
+</div>

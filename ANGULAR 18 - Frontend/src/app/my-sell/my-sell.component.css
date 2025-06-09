@@ -1,0 +1,163 @@
+/*Imports de fuentes*/
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap');
+
+*{
+  font-family:'Rubik';
+}
+
+.general {
+  display: flex;
+  height: 54.65em; /* Asegura que el contenedor principal ocupe toda la altura */
+}
+
+.menu-lateral-izquierda, .contenido {
+  height: 100%;
+}
+
+.menu-lateral-izquierda {
+  width: 20%;
+  background-color: #f7b633cb;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 0px;
+  text-align: center;
+  margin-top: 0px;
+}
+
+.contenido{
+  display: grid;
+  width: 80%;
+  height: 55.9em;
+  margin: 0;
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.menu-superior {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -25vh;
+  gap: 10px;
+}
+
+.card{
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #ffc06771;
+  text-align: center;
+  font-size: 20px;
+  width: 25%;
+}
+
+.estadisticas {
+  font-size: 16px;
+  text-align: left;
+  margin: 10px;
+  color: black;
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.historial{
+  margin-top: -25vh;
+}
+
+p {
+  color: red;
+  font-size: 15px;
+  text-align: center;
+}
+
+h3{
+  margin-right: 20px;
+}
+
+.valido {
+  color: green;
+  font-size: 15px;
+}
+
+* {
+  font-family: 'Rubik';
+}
+
+h4 {
+  text-align: center;
+  font-size: 18px;
+}
+
+.datos {
+  margin: 10px;
+}
+
+.subtitle {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.botones {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.gestion2 {
+  background-color: #0057b3d5;
+  color: white;
+  font-size: 16px;
+  border: none;
+  width: 250px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin: 5px;
+  text-align: center;
+  justify-self: center;
+}
+
+.gestion2:hover {
+  background-color: #0056b3;
+}
+
+.fa-solid {
+  margin-right: 5px;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 0px 10px;
+  width: 98%;
+}
+
+th {
+  width: 20%;
+  font-size: 17px;
+  height: 30px;
+  background-color: #f7b633cb;
+}
+
+tr:nth-child(odd) {
+  background-color: #f7b63369; /* Color para filas impares */
+  height: 30px;
+}
+
+tr:nth-child(even) {
+  background-color: #ffffff; /* Color para filas pares */
+  height: 30px;
+}
+
+td {
+  text-align: center;
+}
+
+.bottom2 {
+  justify-self: center;
+  display: grid;
+}

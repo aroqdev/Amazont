@@ -1,0 +1,140 @@
+/*Imports de fuentes*/
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap');
+
+/*Estilo de la fuente*/
+*{
+  font-family:'Rubik';
+}
+
+p{
+  color: red;
+  font-size: 15px;
+  text-align: center;
+}
+
+.valido{
+  color: green;
+  font-size: 15px;
+}
+
+   body{
+        font-family:'Rubik';
+        text-align: center;
+    }
+
+    .namePage{
+      margin-left: 20px;
+    }
+
+    .img{
+        max-width: 100%;
+        width: 40px;
+        height: 40px;
+        margin-left: 0px;
+        padding: 5px;
+    }
+
+    .nombre{
+        margin-left: 5px;
+    }
+
+    .prod{
+        text-align: center;
+    }
+
+  .categorias{
+    width: 75%;
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 20%;
+    text-align: center;
+  }
+
+  tr{
+    display:flex;
+  }
+
+  td{
+    display:flex;
+  }
+
+  button{
+    width: 380px;
+    display: flex;
+    background-color: #fcbb5b;
+    border-color: black;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .categoryPage{
+    display: flex;
+  }
+
+  .menu-btn{
+    width: 100%;
+    border: 0px;
+    justify-items: center;
+    color: black;
+    font-weight: bold;
+  }
+
+  .menu{
+    height: 275vh;
+    width: 15%;
+    background-color: #fcbb5b;
+  }
+
+  .menuSide {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    position: fixed;
+    /*background-color: #fcbb5b;*/
+    width: 15%;
+    text-align: center;
+  }
+
+  nav{
+    width: 30%;
+  }
+
+  .menuSide.menu-opened {
+    transform: translateX(0);
+  }
+
+  button.menu-btn {
+    text-align: center;
+    justify-content: center;
+    font-size: 16px;
+  }
+
+  /* Menú redimensionado */
+  .menu.menu-resized {
+    width: 15%; /* Nuevo tamaño cuando el menú se redimensiona */
+    transform: translateX(0);
+    transition: transform 0.3s ease-in-out;
+    justify-items: center;
+  }
+
+    .namePage{
+      width: 20%;
+    }
+
+    .elemento{
+      display: flex;
+      gap: 4px;
+      margin-left: -50px;
+      color: black;
+    }
+
+    .icono{
+      font-size: 16px;
+    }
+
+    h3{
+      font-weight: bold;
+      font-family: 'Rubik';
+      font-size: 16px;
+      margin-top: 0px;
+    }

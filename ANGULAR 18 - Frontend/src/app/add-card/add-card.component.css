@@ -1,0 +1,48 @@
+/*Imports de fuentes*/
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap');
+
+p{
+  color: red;
+  font-size: 15px;
+  text-align: center;
+}
+
+.valido{
+  color: green;
+  font-size: 15px;
+}
+
+/**/
+*{
+  font-family:'Rubik';
+}
+
+.head{
+  justify-self: center;
+  text-align: center;
+  background-color: rgba(177, 177, 177, 0.236);
+  width: 45%;
+}
+
+i{
+  font-size: 60px;
+  color: #f7b733;
+}
+
+input{
+  width: 20vw;
+  display: grid;
+  justify-self: center;
+  font-size: 16px;
+}
+
+input[type="submit"]{
+  background-color: #f7b733;
+  width: 20vw;
+  height: 5vh;
+  border-radius: 7px;
+  border: none;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: white;
+}

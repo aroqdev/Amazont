@@ -1,0 +1,89 @@
+/*Imports de fuentes*/
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap');
+
+p{
+  color: red;
+  font-size: 15px;
+  text-align: center;
+}
+
+.valido{
+  color: green;
+  font-size: 15px;
+}
+
+/**/
+*{
+  font-family:'Rubik';
+}
+
+.body{
+  justify-items: center;
+  background-color: rgba(177, 177, 177, 0.236);
+  width: 45%;
+  margin-top: 20px;
+  justify-self: center;
+  text-align: center;
+  border-radius: 4px;
+  display: grid;
+}
+
+form{
+  gap: 30px;
+}
+
+label{
+  text-align: center;
+  align-items: center;
+}
+
+input{
+  width: 20vw;
+  display: grid;
+  font-size: 16px;
+  justify-self: center;
+  margin-bottom: 10px;
+}
+
+i{
+  font-size: 60px;
+  color: #f7b733;
+}
+
+h2{
+  text-transform: uppercase;
+}
+
+.icon{
+  justify-self: center;
+  text-align: center;
+}
+
+.options {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Espaciado entre el radio y el label */
+  margin-bottom: 8px; /* Espaciado entre opciones */
+  margin-left: -50px;
+}
+
+.options input[type="checkbox"] {
+  margin-right: 5px; /* Espaciado entre el radio y el label */
+  margin-top: 8px;
+}
+
+.choice{
+  width: 0vw;
+  margin-left: -120px;
+}
+
+.addButton{
+  background-color: #f7b733;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}

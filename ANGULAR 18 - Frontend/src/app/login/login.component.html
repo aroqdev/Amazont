@@ -1,0 +1,41 @@
+<div class="cuerpo">
+  <div class="logo">
+      <img src="assets/icon.png" alt="logo" class="icon"><!--Logotipo de la empresa-->
+      <!--<h2 aria-label="welcome back">{{ 'login.Bienvenido de vuelta' | translate }}</h2>-->
+  </div>  
+
+  <div class="container">
+    <h3 class="tittle" aria-label="login">{{ 'login.title' | translate }}</h3>
+
+    <form [formGroup]="login" aria-label="login form">
+      <input type="text" placeholder="{{ 'login.email_placeholder' | translate }}" id="correo" formControlName="correo">
+        @if (correo.hasError('required') && correo.touched) {
+          <p>{{ 'login.email_required' | translate }}</p>
+        } @else if (correo.hasError('correoNoExiste') && correo.touched) {
+          <p>{{ 'login.email_not_registered' | translate }}</p>
+        } @else if (correo.hasError('email')) {
+          <p>{{ 'login.email_invalid' | translate }}</p>
+        }
+      <br><br>
+      <input type="password" placeholder="{{ 'login.password_placeholder' | translate }}" id="contrasena" formControlName="contrasena">
+        @if (contrasena.hasError('required') && contrasena.touched) {
+          <p>{{ 'login.password_required' | translate }}</p>
+        }
+      <br><br>
+      <a routerLink="/recoverPassword" class="recover" aria-label="forgotten password link">{{ 'login.forgot_password' | translate }}</a>
+      <br>
+      <br>
+      <button [disabled]="login.invalid" class="login" (click)="loginUser()" aria-label="login button">{{ 'login.login_button' | translate }}</button>
+    </form>
+      <br>
+        @if (mensajeEstado) {
+          <p>{{ mensajeEstado }}</p>
+        }
+      <br>
+    <div class="linea"></div>
+      <h5 aria-label="new here?">{{ 'login.new_here' | translate }}</h5>
+      <br>
+      <button class="register" routerLink="/register" aria-label="create account">{{ 'login.create_account' | translate }}</button>
+  </div>
+
+</div>

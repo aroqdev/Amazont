@@ -1,0 +1,13 @@
+<div [ngClass]="{'categorias' : 'categoria'}">
+  <!--Botones que enlazan con cada categoria-->
+  @for (item of categoria; track $index) {
+    @if ($index < 3){
+    <div class="prod">
+      <button [ngClass]="{'catBtn' : 'catBtn1'}" routerLink="/categorias-prod" aria-label="boton de categorias">
+        <img src="{{item.imagen}}" alt="imagen del producto {{item.nombre}}" [ngClass]="{'producto' : 'producto1'}" aria-label="imagen de la categoria">
+        <h3 aria-label="nombre categoria">{{item.nombre}}</h3>
+      </button>
+    </div>
+    }
+  }
+</div>

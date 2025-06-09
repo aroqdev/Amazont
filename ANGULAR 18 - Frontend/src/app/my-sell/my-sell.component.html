@@ -1,0 +1,66 @@
+<!-- Import de iconos de Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<div class="general">
+  <div class="menu-lateral-izquierda">
+    <h2>{{ 'my_sell.MY_SELLS' | translate }}</h2>
+    <div class="bottom2">
+      <button routerLink="/my_product" class="gestion2">{{ 'my_sell.CANCEL' | translate }}</button>
+      <!--<button class="gestion2" (click)="update()">{{ 'my_sell.UPDATE' | translate }}</button>-->
+    </div>
+  </div>
+
+  <div class="contenido">
+    <div class="menu-superior">
+      <div class="card">
+        <p class="estadisticas">{{ 'my_sell.TOTAL_EARNINGS' | translate }}</p>
+        <div class="card-content">
+          <h3>{{total}}€</h3>
+          <i class="fa-solid fa-coins"></i>
+        </div>
+      </div>
+
+      <div class="card">
+        <p class="estadisticas">{{ 'my_sell.PRODUCTS_SOLD' | translate }}</p>
+        <div class="card-content">
+          <h3>{{productos.length}}</h3>
+          <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+      </div>
+    </div>
+    <div class="historial">
+      <h4>{{ 'my_sell.SALES_HISTORY' | translate }}</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>{{ 'my_sell.PURCHASE_NUMBER' | translate }}</th>
+            <th>{{ 'my_sell.PRODUCT' | translate }}</th>
+            <th>{{ 'my_sell.UNIT_PRICE' | translate }}</th>
+            <th>{{ 'my_sell.QUANTITY' | translate }}</th>
+            <th>{{ 'my_sell.TOTAL' | translate }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          @if (!productos || productos.length === 0) {
+            <tr>
+              <td colspan="5">{{ 'my_sell.NO_PURCHASES' | translate }}</td>
+            </tr>
+          } @else {
+            @for (items of productos; track $index) {
+              <tr>
+                <td>{{items.id}}</td>
+                <td>{{items.producto.nombre}}</td>
+                <td>{{items.precio_producto}} €</td>
+                <td>{{items.cantidad}}</td>
+                <td>{{items.total}} €</td>
+                <td></td>
+              </tr>
+            }
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div>
+</div>

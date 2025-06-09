@@ -1,0 +1,12 @@
+    <div [ngClass]="{'enlaces' : 'enlace'}">
+      <!--Botones de enlace a las ventanas Categoria y Ventas-->
+      <button [ngClass]="{'mainBtn' : 'mainBtn1'}" routerLink="/categorias-prod" aria-label="Ir a la sección de categorías">{{'main_content.category' | translate}}</button>
+      <button [ngClass]="{'mainBtn' : 'mainBtn1'}" routerLink="/categorias-prod" aria-label="Ir a la sección de ventas">{{'main_content.sellings' | translate}}</button>
+    </div>
+
+    <!--Imagen que rellena toda la longitud de la pagina-->
+    <img src="https://bing.com/th/id/BCO.3d890728-f825-465e-b8c5-6ddd1e0b034d.png" alt="Imagen principal del menú" [ngClass]="{'menuImg' : 'imagen1'}" aria-label="Imagen principal">
+
+    <app-menu-cat></app-menu-cat>
+
+    <app-productos></app-productos>

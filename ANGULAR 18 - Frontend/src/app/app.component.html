@@ -1,0 +1,29 @@
+  <!--Div encargado de contener el menu superior-->
+  <div class="encabezado" id="head">
+    <div class="left">
+      <!--<img src="assets/amazon-logo.png" alt="" class="icon" routerLink="/" aria-label="logotipo">-->
+      <picture class="logo-container">
+        <source srcset="assets/amazon_logo_mobile.webp" media="(max-width: 425px)" routerLink="/">
+        <img src="assets/amazon-logo.png" alt="Logotipo" class="logo" aria-label="logotipo" routerLink="/">
+      </picture>
+      <input type="search" class="busqueda" placeholder="🔍 Buscar" aria-label="barra de busqueda">
+    </div>
+
+    <h2 aria-label="Amazont">Amazont</h2>
+
+    <div class="idiomas">
+      <button value="es" (click)="cambiarIdioma('espanol')">Español</button>
+      <button value="en" (click)="cambiarIdioma('ingles')"> English</button> 
+    </div>
+
+      <div class="right">
+        @if (!user) {
+          <button class="menuIcon" routerLink="/login" aria-label="login/registro"></button>
+        } @else {
+          <button class="menuIcon" routerLink="/profile" aria-label="login/registro"></button>
+        }
+        <button class="darkMode"(click)="darkMode()" aria-label="modo oscuro"></button>
+        <button class="chart" routerLink="/shopping_cart" aria-label="carrito"></button>
+      </div>
+    </div>
+  <router-outlet/>

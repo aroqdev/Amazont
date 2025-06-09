@@ -1,0 +1,421 @@
+p{
+  color: red;
+  font-size: 15px;
+  text-align: center;
+}
+
+.valido{
+  color: green;
+  font-size: 15px;
+}
+
+.mainBtn{
+    width: 50%;
+    height: 5vh;
+    margin: 5px;
+    background-color: #f7b733;
+    border-radius: 5px;
+    border: 1px solid black;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'Arial';
+    font-weight: bold;
+}
+
+.menuImg{
+    width: 100%;
+    height: 80vh;
+    margin: 0px;
+}
+
+.categorias{
+    display: flex;
+  }
+
+.catBtn {
+    background-color: #fcbb5b;
+    text-align: center;
+    display: flex; /* Usar flexbox para alinear elementos */
+    align-items: center; /* Alinea la imagen y el texto verticalmente */
+    width: 33%;
+    height: 5vh;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'Arial';
+    font-weight: bold;
+}
+
+.catImg {
+    width: 33px; /* Ajusta el tamaño de la imagen */
+    height: auto; /* Mantén la proporción de la imagen */
+    margin-right: 15vh; /* Espacio entre la imagen y el texto */
+    background-color: transparent;
+    padding: 5px;
+}
+
+.enlaces{
+    display: flex;
+}
+
+.producto{
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+}
+
+.listaProd{
+    display: flex;
+    margin-left: 15px;
+    margin-right: 10px;
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+}
+
+.listaProd2{
+    display: flex;
+    margin-left: 15px;
+    margin-right: 10px;
+}
+
+.prod{
+    margin: 20px;
+    display:flow-root;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 5px 5px 8px #fc825b;
+    width: 30vh;
+}
+
+.oferta{
+  color: red;
+  font-size: small;
+  display: flex;
+  margin: 0;
+  padding-top: 20px;
+}
+
+.precio{
+  font-size: medium;
+  display: inline-flex;
+  margin: 0;
+  padding-top: 18px;
+}
+
+.precios{
+  display:inline-flex;
+  background-color: #fcbb5b;
+  text-align: center;
+  width: 100%;
+  height: 60px;
+  margin: 0;
+  justify-content:center;
+  padding: 5px 0px 5px 0px;
+  vertical-align: middle;
+}
+
+.preciosOfer{
+  display:inline-flex;
+  background-color: #fcbb5b;
+  text-align: center;
+  width: 100%;
+  height: 60px;
+  margin: 0;
+  justify-content:center;
+  padding: 5px 0px 5px 0px;
+  vertical-align: middle;
+}
+
+.precios h3 {
+  margin: 0 10px; /* Ajusta el espacio entre los títulos si es necesario */
+}
+
+@media (max-width: 425px) {
+  body{
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+
+  .menuImg{
+    width: 155vh;
+    height: 70vh;
+    margin: 2px;
+  }
+
+  .catBtn {
+    background-color: #fcbb5b;
+    text-align: center;
+    display: flex; /* Usar flexbox para alinear elementos */
+    align-items: center; /* Alinea la imagen y el texto verticalmente */
+    width: 21%;
+    height: 5vh;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: 'Arial';
+    font-weight: bold;
+  }
+
+  .catImg {
+    width: 23px; /* Ajusta el tamaño de la imagen */
+    height: auto; /* Mantén la proporción de la imagen */
+    margin-right: 2vh; /* Espacio entre la imagen y el texto */
+    background-color: transparent;
+    padding: 2px;
+  }
+
+  .precios{
+    width: 77.4vh;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 27px;
+    margin-left: -150px;
+    margin-right: -21px;
+  }
+
+  .precio{
+    text-align: center;
+    padding: 2px;
+    font-size: 38px;
+  }
+
+  .preciosOfer{
+    width: 34.9vh;
+    background-color: #fcbb5b;
+  }
+
+  h4{
+    margin-bottom: 3px;
+    font-size: 30px;
+  }
+
+  h3{
+    font-size: 35px;
+  }
+
+  /*Contenedor de los botones superiores*/
+  .enlaces{
+    width: 205vw;
+    height: 10vh;
+    margin-bottom: 5px;
+  }
+
+  .mainBtn{
+    /*Dimensiones de los botones*/
+    width: 115vh;
+    height: 9vh;
+    gap: 8px;
+
+    /*Formato de texto*/
+    font-size: 25px;
+  }
+
+  /*Imagen que ocupa toda la longitud*/
+  .menuImg{
+    width: 203vw;
+    height: 70vh;
+    margin: 2px;
+  }
+
+
+}
+
+@media (max-width: 375px) {
+  body{
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+
+  .menuImg{
+    width: 155vh;
+    height: 70vh;
+    margin: 2px;
+  }
+
+  .catBtn {
+    background-color: #fcbb5b;
+    text-align: center;
+    display: flex; /* Usar flexbox para alinear elementos */
+    align-items: center; /* Alinea la imagen y el texto verticalmente */
+    width: 21%;
+    height: 5vh;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: 'Arial';
+    font-weight: bold;
+  }
+
+  .catImg {
+    width: 23px; /* Ajusta el tamaño de la imagen */
+    height: auto; /* Mantén la proporción de la imagen */
+    margin-right: 2vh; /* Espacio entre la imagen y el texto */
+    background-color: transparent;
+    padding: 2px;
+  }
+
+  .precios{
+    width: 77.4vh;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 27px;
+    margin-left: -150px;
+    margin-right: -21px;
+  }
+
+  .precio{
+    text-align: center;
+    padding: 2px;
+    font-size: 38px;
+  }
+
+  .preciosOfer{
+    width: 34.9vh;
+    background-color: #fcbb5b;
+  }
+
+  h4{
+    margin-bottom: 3px;
+    font-size: 30px;
+  }
+
+  h3{
+    font-size: 35px;
+  }
+
+  /*Contenedor de los botones superiores*/
+  .enlaces{
+    width: 325vw;
+    height: 10vh;
+    margin-bottom: 5px;
+  }
+
+  .mainBtn{
+    /*Dimensiones de los botones*/
+    width: 115vh;
+    height: 9vh;
+    gap: 8px;
+
+    /*Formato de texto*/
+    font-size: 38px;
+  }
+
+  /*Imagen que ocupa toda la longitud*/
+  .menuImg{
+    width: 323vw;
+    height: 70vh;
+    margin: 2px;
+  }
+
+
+}
+
+@media (max-width: 320px) {
+  body{
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+
+  .menuImg{
+    width: 155vh;
+    height: 70vh;
+    margin: 2px;
+  }
+
+  .catBtn {
+    background-color: #fcbb5b;
+    text-align: center;
+    display: flex; /* Usar flexbox para alinear elementos */
+    align-items: center; /* Alinea la imagen y el texto verticalmente */
+    width: 21%;
+    height: 5vh;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: 'Arial';
+    font-weight: bold;
+  }
+
+  .catImg {
+    width: 23px; /* Ajusta el tamaño de la imagen */
+    height: auto; /* Mantén la proporción de la imagen */
+    margin-right: 2vh; /* Espacio entre la imagen y el texto */
+    background-color: transparent;
+    padding: 2px;
+  }
+
+  .precios{
+    width: 77.4vh;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 27px;
+    margin-left: -150px;
+    margin-right: -21px;
+  }
+
+  .precio{
+    text-align: center;
+    padding: 2px;
+    font-size: 38px;
+  }
+
+  .preciosOfer{
+    width: 34.9vh;
+    background-color: #fcbb5b;
+  }
+
+  h4{
+    margin-bottom: 3px;
+    font-size: 30px;
+  }
+
+  h3{
+    font-size: 35px;
+  }
+
+  /*Contenedor de los botones superiores*/
+  .enlaces{
+    width: 396vw;
+    height: 10vh;
+    margin-bottom: 15px;
+  }
+
+  .mainBtn{
+    /*Dimensiones de los botones*/
+    width: 115vh;
+    height: 12vh;
+    gap: 8px;
+
+    /*Formato de texto*/
+    font-size: 38px;
+  }
+
+  /*Imagen que ocupa toda la longitud*/
+  .menuImg{
+    width: 395vw;
+    height: 70vh;
+    margin-top: 20px;
+  }
+
+
+}
+

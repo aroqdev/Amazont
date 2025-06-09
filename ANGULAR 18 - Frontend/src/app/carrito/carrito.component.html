@@ -1,0 +1,51 @@
+<!-- Import de iconos de Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+@if (procesoCompra) {
+<div class="body">
+  <div class="productos">
+    <div class="titulo">
+      <h2 class="title">{{ 'shopping_cart.TITLE' | translate }}</h2>
+      <h3 class="price">{{ 'shopping_cart.PRICE' | translate }}</h3>
+    </div>
+    <hr>
+    @if(carrito.length < 1) {
+      <h2 class="title">{{ 'shopping_cart.EMPTY_CART' | translate }}</h2>
+    }
+    @for (item of carrito; track $index) {
+      <div class="prod" role="listitem">
+        <img src="{{item.producto.imagen}}" alt="{{ 'shopping_cart.PRODUCT_IMAGE_ALT' | translate : { name: item.nombre } }}" [ngClass]="{'producto' : 'producto1'}" aria-label="product_image">
+        <div class="content">
+          <h3 aria-label="product_name">{{item.producto.nombre}}</h3>
+          <p aria-label="product_description">{{item.producto.descripcion}}</p>
+          <div [ngClass]="{'precios' : 'precio1'}">
+            <p [ngClass]="{'precio': 'price1'}" aria-label="product_price">{{item.producto.precio}}€</p>
+            <p [ngClass]="{'precio': 'price1'}" aria-label="product_price">{{item.total}}€</p>
+          </div>
+          <div class="add">
+            <i (click)="disminuir(item.id)" class="fa-solid fa-minus" type="button"></i> {{item.cantidad}}
+            <i (click)="aumentar(item.id)" class="fa-solid fa-plus" type="button"></i>
+            <i (click)="eliminar(item.id)" class="fa-solid fa-trash trash" type="button"></i>
+          </div>
+        </div>
+      </div>
+    }
+    @if (mensajeEstado) {
+      <p>{{ mensajeEstado }}</p>
+    }
+  </div>
+  <div class="payment">
+    <div class="total">
+      <h4>{{ 'shopping_cart.SUBTOTAL' | translate }}: {{ total }}</h4>
+      @if(carrito.length != 0) {
+        <button type="button" routerLink="/shopping_cart/payment" (click)="empezarCompra()">{{ 'shopping_cart.PROCEED_PAYMENT' | translate }}</button>
+      }
+      @else {
+      <button type="button" routerLink="/shopping_cart/payment" (click)="empezarCompra()" disabled>{{ 'shopping_cart.PROCEED_PAYMENT' | translate }}</button>
+      }
+    </div>
+  </div>
+</div>
+} @else {
+  <router-outlet></router-outlet>
+}

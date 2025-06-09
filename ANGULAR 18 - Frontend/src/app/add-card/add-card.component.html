@@ -1,0 +1,42 @@
+<!-- Import de iconos de Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<br>
+<div class="head">
+  <i class="fa-solid fa-credit-card"></i>
+  <h2>{{ 'addCard.TITLE' | translate }}</h2>
+  <br>
+  <form [formGroup]="tarjeta" aria-label="login form">
+    <label for="nombre">{{ 'addCard.form.name_label' | translate }}</label>
+    <input type="text" id="nombre" formControlName="nombre"><br>
+    @if (nombre.hasError('required') && nombre.touched) {
+      <p>{{ 'addCard.form.name_required' | translate }}</p>
+    } @else if (nombre.hasError('maxlength') && nombre.touched) {
+      <p>{{ 'addCard.form.name_too_long' | translate }}</p>
+    }
+
+    <label for="numero">{{ 'addCard.form.card_number_label' | translate }}</label>
+    <input type="text" id="numero" formControlName="numero"><br>
+    @if (numero.hasError('required') && numero.touched) {
+      <p>{{ 'addCard.form.card_number_required' | translate }}</p>
+    } @else if (numero.hasError('maxlength') && numero.touched) {
+      <p>{{ 'addCard.form.card_number_too_long' | translate }}</p>
+    }
+
+    <label for="vencimiento">{{ 'addCard.form.expiry_label' | translate }}</label>
+    <input type="month" id="vencimiento" formControlName="vencimiento"><br>
+    @if (vencimiento.hasError('required') && vencimiento.touched) {
+      <p>{{ 'addCard.form.expiry_required' | translate }}</p>
+    }
+
+    <label for="codigo">{{ 'addCard.form.cvv_label' | translate }}</label>
+    <input type="text" id="codigo" formControlName="codigo"><br>
+    @if (codigo.hasError('required') && codigo.touched) {
+      <p>{{ 'addCard.form.cvv_required' | translate }}</p>
+    } @else if (codigo.hasError('maxlength') && codigo.touched) {
+      <p>{{ 'addCard.form.cvv_too_long' | translate }}</p>
+    }
+
+    <input [disabled]="tarjeta.invalid" type="submit" value="{{ 'addCard.form.submit_button' | translate }}" (click)="guardar()">
+  </form>
+</div>

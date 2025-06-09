@@ -1,0 +1,84 @@
+<!-- Import de iconos de Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<div class="general">
+  <div class="menu-lateral-izquierda">
+    <h2>{{ 'my_product.MY_PRODUCTS' | translate }}</h2>
+    <div class="bottom2">
+      <button class="gestion2" routerLink="/add_product">{{ 'my_product.add_product' | translate }}</button>
+      <button class="gestion2" routerLink="/my_sell">{{ 'my_product.VIEW_SALES' | translate }}</button>
+      <button routerLink="/profile/user_record" class="gestion2">{{ 'my_product.CANCEL' | translate }}</button>
+    </div>
+  </div>
+  <div class="contenido">
+    <div class="menu-superior">
+      <div class="card">
+        <p class="estadisticas">{{ 'my_product.TOTAL_EARNINGS' | translate }}</p>
+        <div class="card-content">
+          <!--<h3>{{total}}€</h3>-->
+          <i class="fa-solid fa-coins"></i>
+        </div>
+      </div>
+
+      <div class="card">
+        <p class="estadisticas">{{ 'my_product.PRODUCTS_PURCHASED' | translate }}</p>
+        <div class="card-content">
+          <!--<h3>{{productos.length}}</h3>-->
+          <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+      </div>
+    </div>
+    <div class="datos">
+      @if (!categorias || categorias.length === 0) {
+        <p class="subtitle">{{ 'my_product.NO_PRODUCTS' | translate }}</p>
+      } @else {
+        @for (items of categorias; track $index) {
+          <table class="product-table">
+              <tr>
+                <th>{{ 'my_product.category' | translate }}</th>
+                <th>{{ 'my_product.product_name' | translate }}</th>
+                <th>{{ 'my_product.price' | translate }}</th>
+                <th>{{ 'my_product.old_price' | translate }}</th>
+                <th>{{ 'my_product.stock' | translate }}</th>
+              </tr>
+            <tbody>
+              @for (item of items.productos; track $index) {
+                <tr>
+                  <td>{{items.nombre}}</td>
+                  <td>{{item.nombre}}</td>
+                  <td>{{item.precio}} €</td>
+                  <td>
+                    @if (item.oferta) {
+                      {{item.precioAnterior}} €
+                    } @else {
+                      N/A
+                    }
+                  </td>
+                  <td>{{item.cantidad}}
+                    <div class="botones">
+                      <button class="gestion" [routerLink]="item.id">
+                        <i class="fa-solid fa-pen"></i> {{ 'my_product.EDIT' | translate }}
+                      </button>
+                      <button class="gestion" (click)="eliminar(item.id)">
+                        <i class="fa-solid fa-trash-can"></i> {{ 'my_product.DELETE' | translate }}
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        }
+      }
+    </div>
+  </div>
+</div>
+
+<div>
+
+  @if (mensajeEstado) {
+    <p>{{ mensajeEstado }}</p>
+  }
+  <br>
+
+</div>
