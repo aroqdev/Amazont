@@ -1,0 +1,79 @@
+// app/Models/Carrito.php
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
+class Carrito extends Model
+{
+    protected $fillable = ['created_at'];
+
+    public function productos(): HasMany
+    {
+        return $this->hasMany(Producto::class);
+    }
+}
+
+// app/Http/Controllers/CarritoController.php
+namespace App\Http\Controllers;
+
+use App\Models\Carrito;
+use Illuminate\Http\Request;
+
+class CarritoController extends Controller
+{
+    public function index()
+    {
+        return response()->json(
+            Carrito::with('productos')->orderBy('created_at', 'desc')->get()
+        );
+    }
+}
+
+// carrito.service.ts
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class CarritoService {
+  private apiUrl = 'http://localhost:8000/api/carritos';
+
+  constructor(private http: HttpClient) {}
+
+  getCarritos(): Observable<any> {
+    return this.http.get<any>(this.apiUrl);
+  }
+}
+
+// carrito.component.ts
+import { Component, OnInit } from '@angular/core';
+import { CarritoService } from '../carrito.service';
+
+@Component({
+  selector: 'app-carrito',
+  templateUrl: './carrito.component.html',
+})
+export class CarritoComponent implements OnInit {
+  carritos: any[] = [];
+
+  constructor(private carritoService: CarritoService) {}
+
+  ngOnInit(): void {
+    this.carritoService.getCarritos().subscribe((data) => {
+      this.carritos = data;
+    });
+  }
+}
+
+// carrito.component.html
+<div *ngFor="let carrito of carritos">
+  <h2>Compra realizada el {{ carrito.created_at | date:'short' }}</h2>
+  <ul>
+    <li *ngFor="let producto of carrito.productos">
+      {{ producto.nombre }} - {{ producto.precio | currency }}
+    </li>
+  </ul>
+</div>
